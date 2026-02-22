@@ -16,7 +16,7 @@
     <div id="list">Loading...</div>
 
     <script>
-      const API_BASE = 'http://localhost:5001';
+      const API_BASE = window.location.origin; // use same host/port as the page
 
       async function loadList() {
         const listEl = document.getElementById('list');

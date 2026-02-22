@@ -150,8 +150,8 @@
         </div>
     </footer>
     <script>
-        // base URL for API requests (adjust port if your backend is elsewhere)
-        const API_BASE = 'http://localhost:5001';
+        // base URL for API requests (uses current origin so deployment works)
+        const API_BASE = window.location.origin;
 
         document.addEventListener('DOMContentLoaded', function() {
             // share: copy URL to clipboard or use Web Share API
@@ -170,8 +170,8 @@
             });
 
             // show/hide comments when comment button clicked
-            // base URL for API requests; adjust port if your backend runs elsewhere
-        const API_BASE = 'http://localhost:5001';
+            // base URL for API requests; uses same origin
+        const API_BASE = window.location.origin;
 
         document.querySelectorAll('.comment-btn').forEach(btn => {
                 btn.addEventListener('click', async () => {
