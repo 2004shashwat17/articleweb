@@ -32,6 +32,7 @@
           listEl.innerHTML = '<h2>Recent Recordings</h2>';
           
           for (const rec of recs) {
+            console.log('rendering recording', rec._id);
             const div = document.createElement('div');
             div.className = 'recording';
             div.style.marginBottom = '30px';
@@ -90,10 +91,11 @@
             
             div.appendChild(downloadLink);
 
-            // Add delete button
+            // Add delete button (displayed below download link)
             const deleteBtn = document.createElement('button');
             deleteBtn.textContent = 'Delete';
-            deleteBtn.style.marginLeft = '10px';
+            deleteBtn.style.display = 'inline-block';
+            deleteBtn.style.marginTop = '10px';
             deleteBtn.style.padding = '5px 10px';
             deleteBtn.style.backgroundColor = '#dc3545';
             deleteBtn.style.color = '#fff';
