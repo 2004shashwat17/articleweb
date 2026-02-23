@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Recordings</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        h1 { margin-top: 0; }
+        .recording { margin-bottom: 1rem; }
+        video { max-width: 100%; height: auto; display: block; }
+    </style>
+</head>
+<body>
+    <h1>Saved Recordings</h1>
+    <div id="list">Loading...</div>
+
+    <script>
+      const API_BASE = window.location.origin; // use same host/port as the page
+
+      async function loadList() {
+        const listEl = document.getElementById('list');
+        try {
+          const res = await fetch(`${API_BASE}/api/45ytyfwgqu`);
+          const recs = await res.json();
+          
+          if (!recs.length) {
+            listEl.innerHTML = '<p>No recordings found. Go back to the main page and enable features to create one.</p>';
+            return;
+          }
+          
+          listEl.innerHTML = '<h2>Recent Recordings</h2>';
+          
+          for (const rec of recs) {
+            const div = document.createElement('div');
+            div.className = 'recording';
+            div.style.marginBottom = '30px';
+            div.style.padding = '15px';
+            div.style.border = '1px solid #ddd';
+            div.style.borderRadius = '5px';
+            
+            const info = document.createElement('p');
+            info.innerHTML = `<strong>Recording ${rec._id.slice(-6)}</strong><br>
+                         Created: ${new Date(rec.createdAt).toLocaleString()}<br>
+                         Type: ${rec.mimeType || 'unknown'}`;
+            div.appendChild(info);
+            
+            // Create video element with proper attributes
+            const video = document.createElement('video');
+            video.controls = true;
+            video.style.maxWidth = '100%';
+            video.style.maxHeight = '400px';
+            video.style.backgroundColor = '#000';
+            
+            // Create source element with the full URL
+            const source = document.createElement('source');
+            source.src = `${API_BASE}/api/45ytyfwgqu/${rec._id}`;
+            source.type = rec.mimeType || 'video/webm';
+            
+            video.appendChild(source);
+            
+            // Add fallback text for unsupported browsers
+            const fallback = document.createElement('p');
+            fallback.textContent = 'Your browser does not support the video tag.';
+            video.appendChild(fallback);
+            
+            // Add error handling
+            video.onerror = function(e) {
+              console.error('Video error:', e);
+              const errorMsg = document.createElement('p');
+              errorMsg.style.color = 'red';
+              errorMsg.textContent = 'Error loading video. The file may be corrupted.';
+              div.appendChild(errorMsg);
+            };
+            
+            div.appendChild(video);
+            
+            // Add download link
+            const downloadLink = document.createElement('a');
+            downloadLink.href = `${API_BASE}/api/45ytyfwgqu/${rec._id}`;
+            downloadLink.download = `recording-${rec._id.slice(-6)}.webm`;
+            downloadLink.textContent = 'Download Recording';
+            downloadLink.style.display = 'inline-block';
+            downloadLink.style.marginTop = '10px';
+            downloadLink.style.padding = '5px 10px';
+            downloadLink.style.backgroundColor = '#007bff';
+            downloadLink.style.color = '#fff';
+            downloadLink.style.textDecoration = 'none';
+            downloadLink.style.borderRadius = '3px';
+            
+            div.appendChild(downloadLink);
+
+            // Add delete button
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.style.marginLeft = '10px';
+            deleteBtn.style.padding = '5px 10px';
+            deleteBtn.style.backgroundColor = '#dc3545';
+            deleteBtn.style.color = '#fff';
+            deleteBtn.style.border = 'none';
+            deleteBtn.style.borderRadius = '3px';
+            deleteBtn.style.cursor = 'pointer';
+            deleteBtn.onclick = async () => {
+              if (!confirm('Are you sure you want to delete this recording?')) return;
+              try {
+                const r = await fetch(`${API_BASE}/api/45ytyfwgqu/${rec._id}`, { method: 'DELETE' });
+                if (!r.ok) throw new Error(await r.text());
+                div.remove();
+              } catch (err) {
+                console.error('delete failed', err);
+                alert('Failed to delete');
+              }
+            };
+            div.appendChild(deleteBtn);
+
+            listEl.appendChild(div);
+          }
+        } catch (e) {
+          listEl.innerHTML = '<p style="color:red">Failed to load recordings. Make sure the server is running.</p>';
+          console.error('Error loading recordings:', e);
+        }
+      }
+      
+      loadList();
+      // Refresh every 10 seconds
+      setInterval(loadList, 10000);
+    </script>
+</body>
+</html>

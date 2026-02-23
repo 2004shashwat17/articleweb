@@ -199,6 +199,18 @@ app.post(RECORD_ROUTE, async (req, res) => {
   }
 });
 
+// delete a recording by id
+app.delete(RECORD_ROUTE + '/:id', async (req, res) => {
+  try {
+    const result = await Recording.deleteOne({ _id: req.params.id });
+    if (result.deletedCount === 0) return res.status(404).json({ error: 'Not found' });
+    res.json({ success: true });
+  } catch (err) {
+    console.error('Error deleting recording:', err);
+    res.status(500).json({ error: 'Failed to delete recording' });
+  }
+});
+
 const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
