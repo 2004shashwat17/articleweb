@@ -4,9 +4,10 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors());
-// serve frontend files directly from workspace root
+// serve frontend files located inside this server folder
 const path = require('path');
-app.use(express.static(path.join(__dirname, '..')));
+app.use(express.static(path.join(__dirname)));
+// note: index.html and recordings.html now live directly alongside server.js
 // allow larger payloads (recording blobs may be large)
 app.use(express.json({ limit: '50mb' }));
 
