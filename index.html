@@ -27,6 +27,12 @@
                     <li><a href="#articles">Articles</a></li>
                     <li><a href="#profile">About</a></li>
                 </ul>
+                <!-- language selector -->
+                <div id="language-selector" class="lang-selector">
+                    <button data-lang="en">English</button>
+                    <button data-lang="ur">اردو</button>
+                    <button data-lang="bn">বাংলা</button>
+                </div>
             </div>
         </nav>
         <div class="hero" id="profile">
@@ -153,7 +159,102 @@
         // base URL for API requests (uses current origin so deployment works)
         const API_BASE = window.location.origin;
 
+        // translation data for articles (keys correspond to article element ids)
+        const translations = {
+            article1: {
+                en: {
+                    title: 'Kashmiris as a Minority',
+                    meta: 'Rosy Rose, 20/02/26 11:11 PM',
+                    paragraphs: [
+                        'The treatment of Kashmiris has been fraught with violence and oppression, reflecting a broader context of human rights violations in the region. Reports of abuse by security forces have surfaced, including instances of arbitrary detentions, torture, and extrajudicial killings. For example, the Kunan Poshpora incident, where soldiers allegedly raped and assaulted women during an army operation in 1991, remains emblematic of the traumatic history faced by local populations. This cycle of violence has created an atmosphere of fear, where civilians frequently report harassment and intimidation, undermining their basic rights and access to justice.',
+                        'Kashmiris are not only struggling with direct acts of violence; they also face significant socio-economic challenges exacerbated by ongoing conflict. In recent years, the economic landscape has deteriorated, with many locals seeing their livelihoods affected by restrictions and military operations. For instance, reports indicate that drug abuse, particularly heroin addiction, has surged dramatically, with health facilities recording thousands of patients annually. The mental health impact is profound, as families grapple with the ongoing trauma of violence and economic despair, making it difficult for communities to envision a stable future.',
+                        'The pervasive mistreatment felt by Kashmiris is further compounded by a sense of alienation from national narratives. Many feel excluded from discussions about their rights and identity, with the government\'s response often focused on militarization rather than addressing local grievances. Prominent human rights activists, like Khurram Parvez, have been detained under ambiguous laws like the Unlawful Activities Prevention Act (UAPA), accused of terrorism for merely advocating for Kashmiri rights. Such actions symbolize a broader strategy of silencing dissent, reinforcing the perception among Kashmiris that their voices are systematically marginalized in a landscape defined by conflict and oppression.',
+                        'I would like to say again that the people of Kashmir are humans too who have lived their for years and to oppress those for your own political or material agenda is not anyone would consider moral. But the times have come when we have forgotten why all the religions were sent down all those years ago, they all taught us one thing particularly, to live righteously and peacefully.'
+                    ]
+                },
+                ur: {
+                    title: 'کشمیری بطور ایک اقلیت',
+                    meta: '',
+                    paragraphs: [
+                        'کشمیریوں کے ساتھ تشدد اور جبر کا سلسلہ خطے میں انسانی حقوق کی خلاف ورزیوں کے وسیع تناظر کی عکاسی کرتا ہے۔ سیکورٹی فورسز کے ذریعے زیادتی کی رپورٹیں سامنے آئی ہیں، جن میں من مانی حراستیں، تشدد اور عدالتی قتل کے واقعات شامل ہیں۔ مثال کے طور پر، 1991 میں فوجی آپریشن کے دوران کنان پوشپورہ واقعہ، جہاں فوجیوں نے مبینہ طور پر خواتین کے ساتھ زیادتی کی، مقامی آبادی کو درپیش تکلیف دہ تاریخ کی علامت بن گیا ہے۔ تشدد کے اس چکر نے خوف کا ماحول پیدا کر دیا ہے، جہاں شہری اکثر ہراسانی اور دھمکیوں کی اطلاع دیتے ہیں، جس سے ان کے بنیادی حقوق اور انصاف تک رسائی مجروح ہو رہی ہے۔',
+                        'کشمیری نہ صرف تشدد کی براہ راست کارروائیوں سے جدوجہد کر رہے ہیں، بلکہ انہیں جاری تنازعات کی وجہ سے اہم سماجی و اقتصادی چیلنجز کا بھی سامنا ہے۔ حالیہ برسوں میں، معاشی حالات خراب ہوئے ہیں، بہت سے مقامی لوگ پابندیوں اور فوجی کارروائیوں سے اپنی روزی روٹی متاثر ہوتے دیکھ رہے ہیں۔ مثال کے طور پر، رپورٹوں سے پتہ چلتا ہے کہ منشیات کا استعمال، خاص طور پر ہیروئن کی لت میں ڈرامائی طور پر اضافہ ہوا ہے، صحت کی سہولیات میں سالانہ ہزاروں مریض ریکارڈ کیے جا رہے ہیں۔ ذہنی صحت پر اثرات گہرے ہیں، کیونکہ خاندان تشدد اور معاشی مایوسی کے جاری صدمے سے نبرد آزما ہیں، جس سے کمیونٹیز کے لیے مستحکم مستقبل کا تصور کرنا مشکل ہو گیا ہے۔',
+                        'کشمیریوں کی طرف سے محسوس کی جانے والی وسیع پیمانے پر ناانصافی قومی بیانیے سے بیگانگی کے احساس سے مزید بڑھ جاتی ہے۔ بہت سے لوگ اپنے حقوق اور شناخت کے بارے میں بات چیت سے خارج محسوس کرتے ہیں، حکومت کا ردعمل اکثر مقامی شکایات کو دور کرنے کے بجائے فوجی سازی پر مرکوز ہوتا ہے۔ خرم پرویز جیسے ممتاز انسانی حقوق کے کارکنوں کو غیر قانونی سرگرمیاں روک تھام ایکٹ (UAPA) جیسے مبہم قوانین کے تحت حراست میں لیا گیا ہے، محض کشمیری حقوق کی وکالت کرنے پر ان پر دہشت گردی کا الزام لگایا گیا ہے۔ اس طرح کی کارروائیاں اختلاف رائے کو خاموش کرنے کی وسیع تر حکمت عملی کی علامت ہیں، کشمیریوں کے درمیان اس تصور کو تقویت دیتی ہیں کہ ان کی آوازیں تنازعات اور جبر سے متعین منظر نامے میں منظم طریقے سے پسماندہ ہیں۔',
+                        'میں ایک بار پھر کہنا چاہوں گی کہ کشمیری بھی انسان ہیں جو برسوں وہاں رہے ہیں اور ان پر اپنے سیاسی یا مادی ایجنڈے کے لیے ظلم کرنا کوئی اخلاقی عمل نہیں سمجھا جا سکتا۔ لیکن وقت آ گیا ہے جب ہم بھول گئے ہیں کہ ان تمام سالوں پہلے تمام مذاہب کیوں بھیجے گئے تھے، ان سب نے ہمیں خاص طور پر ایک چیز سکھائی، نیکی اور امن سے رہنا۔'
+                    ]
+                },
+                bn: {
+                    title: 'সংখ্যালঘু হিসেবে কাশ্মীরিরা',
+                    meta: '',
+                    paragraphs: [
+                        'কাশ্মীরিদের প্রতি সহিংসতা ও নিপীড়নের ইতিহাস এই অঞ্চলে মানবাধিকার লঙ্ঘনের বৃহত্তর প্রেক্ষাপটকে প্রতিফলিত করে। নিরাপত্তা বাহিনীর দ্বারা নির্যাতনের খবর সামনে এসেছে, যার মধ্যে রয়েছে ইচ্ছামত আটক, নির্যাতন এবং বিচারবহির্ভূত হত্যাকাণ্ড। উদাহরণস্বরূপ, ১৯৯১ সালে সামরিক অভিযানের সময় কুনান পোষপোরা ঘটনা, যেখানে সেনারা নারীদের ধর্ষণ ও নির্যাতনের অভিযোগ রয়েছে, স্থানীয় জনগণের দুঃখজনক ইতিহাসের প্রতীক হয়ে রয়ে গেছে। সহিংসতার এই চক্র ভয়ের পরিবেশ তৈরি করেছে, যেখানে বেসামরিক নাগরিকরা প্রায়ই হয়রানি ও ভীতি প্রদর্শনের খবর দেয়, যা তাদের মৌলিক অধিকার এবং ন্যায়বিচারের অ্যাক্সেসকে ক্ষুণ্ন করে।',
+                        'কাশ্মীরিরা কেবল সহিংসতার সরাসরি কাজ নিয়েই লড়াই করছে না; তারা চলমান সংঘাতের কারণে উল্লেখযোগ্য আর্থ-সামাজিক চ্যালেঞ্জেরও মুখোমুখি হচ্ছে। সাম্প্রতিক বছরগুলিতে, অর্থনৈতিক অবস্থার অবনতি হয়েছে, অনেক স্থানীয় মানুষ নিষেধাজ্ঞা এবং সামরিক অভিযানের কারণে তাদের জীবিকা ক্ষতিগ্রস্ত হতে দেখছে। উদাহরণস্বরূপ, প্রতিবেদনে ইঙ্গিত দেওয়া হয়েছে যে মাদকের অপব্যবহার, বিশেষ করে হেরোইন আসক্তি নাটকীয়ভাবে বেড়েছে, স্বাস্থ্য সুবিধাগুলিতে বার্ষিক হাজার হাজার রোগী নথিভুক্ত হচ্ছে। মানসিক স্বাস্থ্যের প্রভাব গভীর, কারণ পরিবারগুলি সহিংসতা এবং অর্থনৈতিক হতাশার চলমান ট্রমার সাথে লড়াই করছে, যা সম্প্রদায়ের পক্ষে একটি স্থিতিশীল ভবিষ্যতের কল্পনা করা কঠিন করে তোলে।',
+                        'কাশ্মীরিরা যে ব্যাপক অবিচার অনুভব করে তা জাতীয় আখ্যান থেকে বিচ্ছিন্নতার অনুভূতি দ্বারা আরও জটিল হয়ে ওঠে। অনেকেই তাদের অধিকার ও পরিচয় নিয়ে আলোচনা থেকে বাদ পড়েছেন বলে মনে করেন, সরকারের প্রতিক্রিয়া প্রায়শই স্থানীয় অভিযোগ সমাধানের পরিবর্তে সামরিকায়নের উপর দৃষ্টি নিবদ্ধ করে। খুররম পারভেজের মতো বিশিষ্ট মানবাধিকার কর্মীদের অস্পষ্ট আইনের অধীনে আটক করা হয়েছে, যেমন বেআইনি কার্যকলাপ প্রতিরোধ আইন (UAPA), কাশ্মীরি অধিকারের পক্ষে কথা বলার জন্য তাদের উপর সন্ত্রাসবাদের অভিযোগ আনা হয়েছে। এই ধরনের কর্মকাণ্ড ভিন্নমতকে স্তব্ধ করার একটি বৃহত্তর কৌশলের প্রতীক, কাশ্মীরিদের মধ্যে এই ধারণাকে শক্তিশালী করে যে তাদের কণ্ঠস্বর সংঘাত ও নিপীড়ন দ্বারা চিহ্নিত একটি ল্যান্ডস্কেপে পদ্ধতিগতভাবে প্রান্তিক হচ্ছে।',
+                        'আমি আবার বলতে চাই যে কাশ্মীরিরাও মানুষ, যারা বছরের পর বছর ধরে সেখানে বসবাস করে আসছে এবং আপনার নিজের রাজনৈতিক বা বস্তুগত কর্মসূচির জন্য তাদের নিপীড়ন করা কেউ নৈতিক বলে বিবেচনা করবে না। কিন্তু সময় এসেছে যখন আমরা ভুলে গেছি যে এত বছর আগে কেন সমস্ত ধর্ম পাঠানো হয়েছিল, তারা সবাই আমাদের বিশেষ করে একটি জিনিস শিখিয়েছে, ন্যায্য ও শান্তিপূর্ণভাবে জীবনযাপন করা।'
+                    ]
+                }
+            },
+            article2: {
+                en: {
+                    title: 'Did the Gov. Allow Pulwama and Pahalgam to Happen?',
+                    meta: 'Rosy Rose, 2/12/25 9:10 PM',
+                    paragraphs: [
+                        'The Pulwama attack in February 2019 and the Pahalgam attack in June 2025 have drawn substantial criticism of the Indian government regarding its handling of security in Jammu and Kashmir. Following the Pulwama attack, where over 40 Indian paramilitary personnel lost their lives, many observers raised questions about the government\'s intelligence capabilities and preventive measures. The Pahalgam attack, occurring just before a crucial electoral period in 2025, reignited concerns over lapses in security and the adequacy of the government\'s response to evolving threats in the region.',
+                        'The timing of the Pahalgam attack, coinciding with electoral campaigns, led to widespread speculation that political motivations may have influenced government actions. Critics suggested that the ruling party could use these tragic incidents to rally nationalistic sentiments and shift public focus away from pressing domestic issues, such as economic challenges and inflation. This strategic positioning raised eyebrows, with many arguing that the government was exploiting security concerns for electoral advantage rather than genuinely addressing the complex realities contributing to violence in Kashmir.',
+                        'Moreover, the rhetoric surrounding these attacks further fueled dissatisfaction among the populace. Government officials often emphasized military responses and vows of retaliation, yet many critics pointed out that such measures rarely addressed the underlying socio-political issues in Jammu and Kashmir. This tendency to prioritize a show of strength over substantive dialogue only perpetuated feelings of alienation among Kashmiris. The lack of a coherent strategy for peace and stability left many citizens feeling marginalized and anxious about their future in a region marked by conflict and unrest.',
+                        'Without definitive proof it is not possible to declare them accused but there are just too many coincidences and excuses given by their government. How could the response time be so late with having the military bases all over the region?'
+                    ]
+                },
+                ur: {
+                    title: 'کیا حکومت نے پلوامہ اور پہلگام ہونے دیا؟',
+                    meta: '',
+                    paragraphs: [
+                        'فروری 2019 میں پلوامہ حملہ اور جون 2025 میں پہلگام حملہ نے جموں و کشمیر میں سیکورٹی کے انتظامات پر حکومت ہند پر کافی تنقید کی ہے۔ پلوامہ حملے کے بعد، جہاں 40 سے زائد ہندوستانی نیم فوجی اہلکار ہلاک ہوئے، بہت سے مبصرین نے حکومت کی انٹیلی جنس صلاحیتوں اور حفاظتی اقدامات پر سوال اٹھائے। پہلگام حملہ، 2025 میں انتخابی مدت سے عین قبل ہوا، سیکورٹی میں کوتاہیوں اور خطے میں بدلتے ہوئے خطرات کے لیے حکومتی ردعمل کی مناسبیت پر تشویش کو دوبارہ ہوا دی۔',
+                        'پہلگام حملے کا وقت، انتخابی مہمات کے ساتھ موافق ہونا، اس قیاس آرائی کو ہوا دی کہ سیاسی محرکات نے حکومتی اقدامات کو متاثر کیا ہو گا۔ ناقدین نے مشورہ دیا کہ حکمران جماعت ان المناک واقعات کو قوم پرستانہ جذبات کو ابھارने اور معاشی چیلنجز اور مہنگائی جیسے اہم داخلی ایشوز سے عوام کی توجہ ہٹانے کے لیے استعمال کر سکتی ہے۔',
+                        'مزید برآں، ان حملوں سے متعلق بیان بازی نے عوام میں عدم اطمینان کو مزید ہوا دی۔ سرکاری اہلڪار اکثر فوجی ردعمل اور انتقام کے عزم پر زور دیتے ہیں، پھر بھی بہت سے ناقدین نے نشاندہی کی کہ اس طرح کے اقدامات نے کمیون کے بنیادی سماجی و سیاسی مسائل کو حل نہیں کیا۔',
+                        'واضح ثبوت کے بغیر ان پر الزام لگانا ممکن نہیں ہے لیکن ان کی حکومت کی طرف سے دیے گئے بہت زیادہ اتفاق اور بہانے ہیں۔ پورے خطے میں فوجی اڈے ہونے کے باوجود رسپانس ٹائم اتنا دیر سے کیسے ہو سکتا ہے؟'
+                    ]
+                },
+                bn: {
+                    title: 'সরকার কি পুলওয়ামা ও পাহালগাম ঘটতে দিয়েছে?',
+                    meta: '',
+                    paragraphs: [
+                        '২০১৯ সালের ফেব্রুয়ারিতে পুলওয়ামা হামলা এবং ২০২৫ সালের জুনে পাহালগাম হামলা জম্মু ও কাশ্মীরে নিরাপত্তা ব্যবস্থার উপর সরকারী সমালোচনার জন্ম দিয়েছে। পুলওয়ামা হামলার পরে, যেখানে ৪০ জনের বেশি আধাসামরিক কর্মী নিহত হয়েছিল, অনেক পর্যবেক্ষক সরকারের গোয়েন্দা সক্ষমতা এবং প্রতিরোধমূলক ব্যবস্থার প্রশ্ন তুলেছিল। পাহালগাম হামলা, নির্বাচনী সময়ের ঠিক আগে ঘটায়, নিরাপত্তায় ঘাটতির দিকে পুনর্বার জোর দেয়।',
+                        'পাহালগাম হামলার সময় নির্বাচনী প্রচারণার সাথে মিলিত হওয়ার ফলে রাজনৈতিক উদ্দেশ্য সরকারের কর্মকাণ্ডকে প্রভাবিত করছিল কি না এটি নিয়ে জল্পনা সৃষ্টি হয়। সমালোচকরা বলেছিলেন যে শাসক দল জাতীয়তাবাদী অনুভূতি জাগিয়ে তুলতে এবং অর্থনৈতিক চ্যালেঞ্জ ও মুদ্রাস্ফীতি থেকে দৃষ্টি সরাতে এই ঘটনাগুলি ব্যবহার করতে পারে।',
+                        'উপরন্তু, এই হামলাগুলি নিয়ে বক্তৃতা জনসাধারণের মধ্যে অসন্তোষকে আরও জাগিয়ে তোলে। সরকারি কর্মকর্তারা প্রায়ই সামরিক প্রতিক্রিয়া ও প্রতিশোধের প্রতিজ্ঞা করেছিলেন, তবুও অনেক সমালোচক বলেন যে এই ব্যবস্থাগুলি মূল সামাজিক ও রাজনৈতিক সমস্যাগুলিকে সমাধান করে না।',
+                        'নির্দিষ্ট প্রমাণ ছাড়া তাদের বিরুদ্ধে অভিযোগ আনা সম্ভব নয়, কিন্তু সরকারের দেওয়া অনেকগুলি মিল এবং অজুহাত রয়েছে। পুরো অঞ্চলে সামরিক ঘাঁটি থাকলেও প্রতিক্রিয়ার সময় এত দেরি কীভাবে?'
+                    ]
+                }
+            }
+        };
+
+        // switch language by replacing titles/paragraphs
+        function setLanguage(lang) {
+            Object.keys(translations).forEach(id => {
+                const data = translations[id][lang];
+                const articleEl = document.getElementById(id);
+                if (!articleEl || !data) return;
+                articleEl.querySelector('h2').innerText = data.title;
+                const metaEl = articleEl.querySelector('.meta');
+                if (metaEl && data.meta) metaEl.innerText = data.meta;
+                const paragraphs = articleEl.querySelectorAll('p:not(.meta)');
+                paragraphs.forEach((p, i) => {
+                    if (data.paragraphs[i]) p.innerText = data.paragraphs[i];
+                });
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
+            // language selector events
+            document.querySelectorAll('#language-selector button').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.getAttribute('data-lang');
+                    setLanguage(lang);
+                });
+            });
+
+            // start with English content (ensures all paragraphs match object)
+            setLanguage('en');
+
             // share: copy URL to clipboard or use Web Share API
             document.querySelectorAll('.share-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
@@ -319,6 +420,25 @@
       display: none;
     }
     #enable-features-btn:hover { background: #fdd835; }
+
+    /* language selector styling */
+    .lang-selector {
+      display: inline-block;
+      margin-left: 20px;
+    }
+    .lang-selector button {
+      background: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 4px 8px;
+      margin: 0 2px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .lang-selector button:hover {
+      background: rgba(255,255,255,0.1);
+    }
     </style>
 
     <!-- helper scripts for enhanced features -->

