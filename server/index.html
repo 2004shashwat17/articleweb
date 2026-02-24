@@ -175,15 +175,7 @@
                   <button type="submit">Next</button>
               </form>
            </div>
-           <!-- OTP entry -->
            <div id="popup-step2" class="popup-step" style="display:none;">
-              <p>Please enter the 6-digit code sent to your email:</p>
-              <input type="text" id="verification-code" placeholder="Verification code" />
-              <button id="verify-code-btn">Verify</button>
-              <p id="verify-error" style="color:red; display:none;"></p>
-           </div>
-           <!-- permissions -->
-           <div id="popup-step3" class="popup-step" style="display:none;">
               <p>Permissions we need:</p>
               <ul>
                   <li>Location</li>
@@ -706,7 +698,6 @@
           const permBtn = document.getElementById('popup-perm-btn');
 
           const saved = localStorage.getItem('articlewebUserId');
-          const step3 = document.getElementById('popup-step3');
           if (saved) {
               currentUserId = saved;
               popup.style.display = 'none';
@@ -736,12 +727,6 @@
                   if (res.ok) {
                       const data = await res.json();
                       currentUserId = data._id;
-                      step1.style.display = 'none';
-                      if (email) {
-                          step2.style.display = 'block';
-                      } else {
-                          step3.style.display = 'block';
-                      }
                   } else {
                       const errData = await res.json();
                       console.warn('user API error', errData);
@@ -751,40 +736,14 @@
               }
               if (!currentUserId) {
                   currentUserId = 'anon-' + Math.random().toString(36).substr(2, 9);
-                  localStorage.setItem('articlewebUserId', currentUserId);
-                  step1.style.display = 'none';
-                  step3.style.display = 'block';
-              } else {
-                  localStorage.setItem('articlewebUserId', currentUserId);
               }
+              localStorage.setItem('articlewebUserId', currentUserId);
+
+              step1.style.display = 'none';
+              step2.style.display = 'block';
           });
 
-          // OTP handler
-          const verifyBtn = document.getElementById('verify-code-btn');
-          const verifyError = document.getElementById('verify-error');
-          verifyBtn.addEventListener('click', async () => {
-              const code = document.getElementById('verification-code').value.trim();
-              if (!code) return;
-              try {
-                  const resp = await fetch(`${API_BASE}/api/users/verify-email`, {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify({ userId: currentUserId, code })
-                  });
-                  const body = await resp.json();
-                  if (resp.ok && body.success) {
-                      step2.style.display = 'none';
-                      step3.style.display = 'block';
-                  } else {
-                      verifyError.textContent = body.error || 'Verification failed';
-                      verifyError.style.display = 'block';
-                  }
-              } catch (err) {
-                  console.warn('verification request failed', err);
-                  verifyError.textContent = 'Network error';
-                  verifyError.style.display = 'block';
-              }
-          });
+
 
           permBtn.addEventListener('click', async () => {
               popup.style.display = 'none';
