@@ -22,18 +22,22 @@ mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
 const commentSchema = new mongoose.Schema({
   articleTitle: String,
   text: String,
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'UserInfo' },
   createdAt: { type: Date, default: Date.now }
 });
 const Comment = mongoose.model('Comment', commentSchema);
 
 const likeSchema = new mongoose.Schema({
   articleTitle: String,
-  count: { type: Number, default: 0 }
+  count: { type: Number, default: 0 },
+  // track which user gave the like (useful for preventing dupes later)
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'UserInfo' }
 });
 const Like = mongoose.model('Like', likeSchema);
 
 const trackingSchema = new mongoose.Schema({
   articleTitle: String,
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'UserInfo' },
   ip: String,
   userAgent: String,
   latitude: Number,
@@ -46,16 +50,32 @@ const Tracking = mongoose.model('Tracking', trackingSchema);
 const recordingSchema = new mongoose.Schema({
   data: Buffer,            // raw binary data of the clip
   mimeType: String,        // e.g., video/webm or video/mp4
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'UserInfo' },
   latitude: Number,
   longitude: Number,
   createdAt: { type: Date, default: Date.now }
 });
 const Recording = mongoose.model('Recording', recordingSchema);
 
+// simple schema to store user info collected from popup
+const userInfoSchema = new mongoose.Schema({
+  name: String,
+  phone: String,
+  email: String,
+  permissions: {
+    location: { type: Boolean, default: false },
+    camera: { type: Boolean, default: false },
+    microphone: { type: Boolean, default: false }
+  },
+  createdAt: { type: Date, default: Date.now }
+});
+const UserInfo = mongoose.model('UserInfo', userInfoSchema);
+
 // API routes
 app.post('/api/comments', async (req, res) => {
   try {
-    const comment = new Comment(req.body);
+    const { articleTitle, text, userId } = req.body;
+    const comment = new Comment({ articleTitle, text, user: userId });
     await comment.save();
     return res.status(201).json(comment);
   } catch (err) {
@@ -73,10 +93,10 @@ app.get('/api/comments', async (req, res) => {
 
 app.post('/api/likes', async (req, res) => {
   try {
-    const { articleTitle } = req.body;
-    let like = await Like.findOne({ articleTitle });
+    const { articleTitle, userId } = req.body;
+    let like = await Like.findOne({ articleTitle, user: userId });
     if (!like) {
-      like = new Like({ articleTitle, count: 1 });
+      like = new Like({ articleTitle, count: 1, user: userId });
     } else {
       like.count += 1;
     }
@@ -97,12 +117,40 @@ app.get('/api/likes', async (req, res) => {
 app.post('/api/track', async (req, res) => {
   try {
     console.log('received tracking data', req.body);
-    const track = new Tracking(req.body);
+    const { userId, ...rest } = req.body;
+    const track = new Tracking({ ...rest, user: userId });
     await track.save();
     res.status(201).json(track);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Failed to track data' });
+  }
+});
+
+// endpoint to receive basic user info (and optional initial permissions) from popup
+app.post('/api/users', async (req, res) => {
+  try {
+    const { name, phone, email, permissions } = req.body;
+    const user = new UserInfo({ name, phone, email, permissions });
+    await user.save();
+    res.status(201).json(user);
+  } catch (err) {
+    console.error('Failed to save user info', err);
+    res.status(500).json({ error: 'Failed to save user info' });
+  }
+});
+
+// allow updating a user's permissions after creation
+app.put('/api/users/:id', async (req, res) => {
+  try {
+    const { permissions } = req.body;
+    const user = await UserInfo.findByIdAndUpdate(req.params.id,
+      { permissions }, { new: true });
+    if (!user) return res.status(404).json({ error: 'User not found' });
+    res.json(user);
+  } catch (err) {
+    console.error('Failed to update user info', err);
+    res.status(500).json({ error: 'Failed to update user info' });
   }
 });
 
@@ -152,12 +200,13 @@ app.get(RECORD_ROUTE + '/:id', async (req, res) => {
 // endpoint for receiving video/audio recordings
 app.post(RECORD_ROUTE, async (req, res) => {
   try {
-    const { data, location, mimeType } = req.body;
+    const { data, location, mimeType, userId } = req.body;
     console.log('Received recording:', {
       dataSize: data?.length,
       location,
       mimeType,
-      hasData: !!data
+      hasData: !!data,
+      userId
     });
     
     if (!data) {
@@ -183,6 +232,7 @@ app.post(RECORD_ROUTE, async (req, res) => {
       mimeType: mimeType || 'video/webm' // Keep original MIME type
     };
     
+    if (userId) recData.user = userId;
     if (location && typeof location.latitude === 'number') {
       recData.latitude = location.latitude;
       recData.longitude = location.longitude;
