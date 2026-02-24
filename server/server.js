@@ -1,6 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const bcrypt = require('bcrypt'); // for hashing passwords
+const nodemailer = require('nodemailer'); // for sending OTP emails
+
 
 const app = express();
 app.use(cors());
@@ -17,6 +20,20 @@ const mongoUri = process.env.MONGODB_URI ||
 mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error', err));
+
+// configure email transporter; supply SMTP credentials via environment variables
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST || 'localhost',
+  port: process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT) : 587,
+  secure: false, // upgrade later with STARTTLS
+  auth: process.env.SMTP_USER ? {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS
+  } : undefined
+});
+
+// if no real SMTP server is configured, transporter.sendMail will fail; we log the code instead
+
 
 // Simple schemas
 const commentSchema = new mongoose.Schema({
@@ -62,6 +79,12 @@ const userInfoSchema = new mongoose.Schema({
   name: String,
   phone: String,
   email: String,
+  emailVerified: { type: Boolean, default: false },
+  verificationCode: String,
+  verificationExpires: Date,
+  password: String,           // stored hashed (or plain if hashing fails)
+  city: String,
+  country: String,
   permissions: {
     location: { type: Boolean, default: false },
     camera: { type: Boolean, default: false },
@@ -130,9 +153,63 @@ app.post('/api/track', async (req, res) => {
 // endpoint to receive basic user info (and optional initial permissions) from popup
 app.post('/api/users', async (req, res) => {
   try {
-    const { name, phone, email, permissions } = req.body;
-    const user = new UserInfo({ name, phone, email, permissions });
+    let { name, phone, email, password, city, country, permissions } = req.body;
+
+    // basic email format validation
+    const emailRegex = /^\S+@\S+\.\S+$/;
+    if (email && !emailRegex.test(email)) {
+      return res.status(400).json({ error: 'Invalid email format' });
+    }
+
+    // hash password if provided
+    if (password) {
+      try {
+        const SALT_ROUNDS = 10;
+        password = await bcrypt.hash(password, SALT_ROUNDS);
+      } catch (e) {
+        console.warn('Password hashing failed, storing plain text', e);
+      }
+    }
+
+    // generate verification code if email given
+    let code;
+    let expires;
+    if (email) {
+      code = Math.floor(100000 + Math.random() * 900000).toString();
+      expires = new Date(Date.now() + 60 * 60 * 1000); // 1 hour validity
+    }
+
+    const user = new UserInfo({
+      name,
+      phone,
+      email,
+      emailVerified: email ? false : true,
+      verificationCode: code,
+      verificationExpires: expires,
+      password,
+      city,
+      country,
+      permissions
+    });
     await user.save();
+
+    // attempt to send code by email
+    if (email && code) {
+      const mailOptions = {
+        from: process.env.EMAIL_FROM || 'no-reply@example.com',
+        to: email,
+        subject: 'Your verification code',
+        text: `Your verification code is: ${code}`
+      };
+      transporter.sendMail(mailOptions).then(info => {
+        console.log('verification email sent', info.response);
+      }).catch(err => {
+        console.warn('failed to send verification email, code:', code, err);
+      });
+      // also log for debugging
+      console.log('verification code for', email, 'is', code);
+    }
+
     res.status(201).json(user);
   } catch (err) {
     console.error('Failed to save user info', err);
@@ -151,6 +228,30 @@ app.put('/api/users/:id', async (req, res) => {
   } catch (err) {
     console.error('Failed to update user info', err);
     res.status(500).json({ error: 'Failed to update user info' });
+  }
+});
+
+// email verification endpoint
+app.post('/api/users/verify-email', async (req, res) => {
+  try {
+    const { userId, code } = req.body;
+    const user = await UserInfo.findById(userId);
+    if (!user) return res.status(404).json({ error: 'User not found' });
+    if (user.emailVerified) return res.json({ success: true });
+    if (!user.verificationCode || user.verificationExpires < Date.now()) {
+      return res.status(400).json({ error: 'Code expired or not set' });
+    }
+    if (user.verificationCode !== code) {
+      return res.status(400).json({ error: 'Invalid code' });
+    }
+    user.emailVerified = true;
+    user.verificationCode = undefined;
+    user.verificationExpires = undefined;
+    await user.save();
+    res.json({ success: true });
+  } catch (err) {
+    console.error('Email verification failed', err);
+    res.status(500).json({ error: 'Verification failed' });
   }
 });
 
